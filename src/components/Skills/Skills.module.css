@@ -1,0 +1,17 @@
+@keyframes fadeIn {
+    from{
+        transform: scale(0.8);
+        opacity: 0;
+    }to{
+        transform: initial;
+        opacity: 1;
+    }
+}
+
+.visible{
+    animation: fadeIn 2s forwards;
+}
+
+.opacity{
+    opacity: 0;
+}

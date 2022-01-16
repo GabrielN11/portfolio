@@ -1,0 +1,114 @@
+@font-face {
+  font-family: Acme;
+  src: url(/Acme-Regular.ttf);
+}
+@font-face{
+  font-family: Oswald;
+  src: url(/Oswald-VariableFont_wght.ttf);
+}
+
+@font-face{
+  font-family: Montserrat;
+  src: url(/Montserrat-Regular.ttf);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Oswald, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scrollbar-color: grey transparent;
+  scrollbar-width: normal;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+.body::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 20px;
+  border: 3px solid #f8f9fa;
+}
+
+.darkScroll{
+  scrollbar-color: grey transparent;
+  background-color: #000;
+}
+
+.lightScroll{
+  scrollbar-color: grey transparent;
+  background-color: #f8f9fa;
+}
+
+.twilightScroll{
+  scrollbar-color: #945060 transparent;
+  background-color: #000;
+}
+
+.darkScroll::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 20px;
+  border: 3px solid #000;
+}
+
+.lightScroll::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 20px;
+  border: 3px solid #f8f9fa;
+}
+
+.twilightScroll::-webkit-scrollbar-thumb {
+  background-color: #945060;
+  border-radius: 20px;
+  border: 3px solid #000;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.none{
+  display: none !important;
+}
+
+.font-acme{
+  font-family: Acme, 'Courier New', Courier, monospace;
+}
+
+.font-montserrat{
+  font-family: Montserrat, 'Courier New', Courier, monospace;
+}
+
+.fadeInFadeOut{
+  position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0;
+    animation: fadeAnim 1s forwards ease-in;
+}
+
+@keyframes fadeAnim {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 0;
+  }
+}
