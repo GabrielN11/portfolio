@@ -70,7 +70,7 @@ export const StyledNavbar = styled.nav`
     position: relative;
     margin: 0 30px;
     max-width: 100vw;
-    display: ${({visible}) => visible ? 'flex' : 'none'};
+    display: flex;
     align-items: center;
     color: #fff;
     animation: ${fallingDown} 1s forwards ease-out;

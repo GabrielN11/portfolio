@@ -156,6 +156,17 @@ const index = ({setImage, image}) => {
     }, [image])
 
     React.useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting){
+                swiperRef.current.swiper.autoplay.stop()
+            }else{
+                swiperRef.current.swiper.autoplay.start()
+            }
+        }, {threshold: [0.5]})
+        observer.observe(document.querySelector('#projects'))
+    }, [])
+
+    React.useEffect(() => {
         const prev = document.querySelector('.swiper-button-prev')
         const next = document.querySelector('.swiper-button-next')
         const bullet = document.querySelectorAll('.swiper-pagination-bullet')
@@ -169,11 +180,7 @@ const index = ({setImage, image}) => {
           
     }, [mode])
     return (
-        <StyledProjectSection
-            mode={mode}
-            onMouseEnter={() => swiperRef.current.swiper.autoplay.stop()}
-            onMouseLeave={() => swiperRef.current.swiper.autoplay.start()}
-            id='projects'>
+        <StyledProjectSection mode={mode} id='projects'>
             <Swiper pagination navigation className="mySwiper" modules={[Navigation, Pagination, Autoplay, A11y]}
                 allowTouchMove={false} autoplay={true} ref={swiperRef} loop={true}>
                 {projects.map(project => (

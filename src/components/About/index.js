@@ -33,13 +33,13 @@ const index = ({ visible }) => {
                 </StyledText>
             </StyledAboutText>
             <StyledAboutBottom className={show < 5 ? styles.opacity : styles.visible}>
-                <a title='Linkedin'>
+                <a title='Linkedin' href='https://www.linkedin.com/in/gabriel-nunes-51b2bb69' target='_blank'>
                     <SvgLinkedin color={mode === 'light' ? '#1b1b1b' : mode === 'dark' ? '#c7c7c7' : '#945060'} size={35} />
                 </a>
-                <a title='GitHub'>
+                <a title='GitHub' href='https://github.com/GabrielN11' target='_blank'>
                     <SvgGithub color={mode === 'light' ? '#1b1b1b' : mode === 'dark' ? '#c7c7c7' : '#945060'} size={35} />
                 </a>
-                <a title='dio._'>
+                <a title='dio._' href='https://web.dio.me/users/gabrielnunes11c' target='_blank'>
                     <SvgDio color={mode === 'light' ? '#1b1b1b' : mode === 'dark' ? '#c7c7c7' : '#945060'} size={70} />
                 </a>
             </StyledAboutBottom>

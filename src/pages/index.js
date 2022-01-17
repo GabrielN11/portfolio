@@ -7,12 +7,12 @@ import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 import { GlobalContext } from '../components/GlobalContext'
 import ImageZoom from '../components/Projects/ImageZoom'
+import ScrollTop from '../components/ScrollTop'
 
 const index = () => {
   const [transition, setTransition] = React.useState(false)
   const [image, setImage] = React.useState(false)
   const [visible, setVisible] = React.useState({
-    header: true,
     about: false,
     skills: false,
     contact: false
@@ -23,14 +23,6 @@ const index = () => {
     const about = document.querySelector('#about')
     const skills = document.querySelector('#skills')
     const contact = document.querySelector('#contact')
-    const header = document.querySelector('#header')
-    let headerObserver = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.7) {
-        setVisible(current => ({ ...current, header: true }))
-      } else if (entries[0].intersectionRatio <= 0.1) {
-        setVisible(current => ({ ...current, header: false }))
-      }
-    }, { threshold: [0.7, 0.1] })
     
     let aboutObserver = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.7) {
@@ -58,8 +50,8 @@ const index = () => {
     aboutObserver.observe(about)
     skillsObserver.observe(skills)
     contactObserver.observe(contact)
-    headerObserver.observe(header)
   }, [])
+  
   return (
     <>
       <Head>
@@ -70,6 +62,7 @@ const index = () => {
       <Skills visible={visible.skills} />
       <Projects image={image} setImage={setImage} />
       <Contact visible={visible.contact} />
+      <ScrollTop mode={mode}/>
       <div className={!transition ? 'none' : 'fadeInFadeOut'} />
       {image && <ImageZoom image={image} mode={mode} setImage={setImage} />}
     </>

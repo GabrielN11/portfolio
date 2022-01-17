@@ -1,15 +1,32 @@
 import React from 'react'
 import { GlobalContext } from '../../GlobalContext'
 import { StyledMobileNav, StyledMobileNavItem } from './styles'
+import {Link} from 'react-scroll'
 
 const index = () => {
     const {mode, english} = React.useContext(GlobalContext)
     return (
         <StyledMobileNav mode={mode}>
-            <StyledMobileNavItem>{english ? 'ABOUT ME' : 'SOBRE'}</StyledMobileNavItem>
-            <StyledMobileNavItem>{english ? 'SKILLS' : 'HABILIDADES'}</StyledMobileNavItem>
-            <StyledMobileNavItem>{english ? 'PROJECTS' : 'PROJETOS'}</StyledMobileNavItem>
-            <StyledMobileNavItem>{english ? 'CONTACT ME' : 'CONTATO'}</StyledMobileNavItem>
+            <StyledMobileNavItem>
+                    <Link smooth duration={500} to='about'>
+                        {english ? 'ABOUT ME' : 'SOBRE'}
+                    </Link>
+                </StyledMobileNavItem>
+                <StyledMobileNavItem>
+                    <Link smooth duration={500} to='skills'>
+                        {english ? 'SKILLS' : 'HABILIDADES'}
+                    </Link>
+                </StyledMobileNavItem>
+                <StyledMobileNavItem>
+                    <Link smooth duration={500} to='projects'>
+                        {english ? 'PROJECTS' : 'PROJETOS'}
+                    </Link>
+                </StyledMobileNavItem>
+                <StyledMobileNavItem>
+                    <Link smooth duration={500} to='contact'>
+                        {english ? 'CONTACT ME' : 'CONTATO'}
+                    </Link>
+                </StyledMobileNavItem>
         </StyledMobileNav>
     )
 }

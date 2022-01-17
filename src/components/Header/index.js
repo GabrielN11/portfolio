@@ -4,8 +4,9 @@ import { GlobalContext } from '../GlobalContext'
 import ModeChanger from './ModeChanger'
 import LanguageChanger from './LanguageChanger'
 import MobileNav from './MobileNav'
+import { Link } from 'react-scroll'
 
-const index = ({ setTransition, visible }) => {
+const index = ({ setTransition}) => {
     const { mode, english } = React.useContext(GlobalContext)
     const [mobileNav, setMobileNav] = React.useState(false)
 
@@ -28,12 +29,28 @@ const index = ({ setTransition, visible }) => {
     }
     return (
         <StyledHeader mode={mode} id='header'>
-            <StyledNavbar className='font-acme' visible={visible}>
+            <StyledNavbar className='font-acme'>
                 <StyledProfileAvatar />
-                <StyledNavItem mode={mode}><p>{english ? 'ABOUT ME' : 'SOBRE'}</p></StyledNavItem>
-                <StyledNavItem mode={mode}><p>{english ? 'SKILLS' : 'HABILIDADES'}</p></StyledNavItem>
-                <StyledNavItem mode={mode}><p>{english ? 'PROJECTS' : 'PROJETOS'}</p></StyledNavItem>
-                <StyledNavItem mode={mode}><p>{english ? 'CONTACT ME' : 'CONTATO'}</p></StyledNavItem>
+                <StyledNavItem mode={mode}>
+                    <Link smooth duration={500} to='about' offset={-70}>
+                        <p>{english ? 'ABOUT ME' : 'SOBRE'}</p>
+                    </Link>
+                </StyledNavItem>
+                <StyledNavItem mode={mode}>
+                    <Link smooth duration={500} to='skills' offset={-70}>
+                        <p>{english ? 'SKILLS' : 'HABILIDADES'}</p>
+                    </Link>
+                </StyledNavItem>
+                <StyledNavItem mode={mode}>
+                    <Link smooth duration={500} to='projects' offset={-70}>
+                        <p>{english ? 'PROJECTS' : 'PROJETOS'}</p>
+                    </Link>
+                </StyledNavItem>
+                <StyledNavItem mode={mode}>
+                    <Link smooth duration={500} to='contact'>
+                        <p>{english ? 'CONTACT ME' : 'CONTATO'}</p>
+                    </Link>
+                </StyledNavItem>
                 <ModeChanger setTransition={setTransition} />
                 <LanguageChanger />
                 <StyledToggle onClick={() => {

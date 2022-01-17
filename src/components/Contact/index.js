@@ -2,10 +2,16 @@ import React from 'react'
 import { GlobalContext } from '../GlobalContext'
 import { StyledButton, StyledContact, StyledContactInfo, StyledDiv, StyledForm, StyledInput, StyledSeparator, StyledTextarea, StyledTitle } from './styles'
 import styles from './Contact.module.css'
+import useAlert from '../../hooks/useAlert'
+import Alert from '../Alert/Alert'
 
 const index = ({ visible }) => {
     const { mode, english } = React.useContext(GlobalContext)
     const [show, setShow] = React.useState(0)
+    const [name, setName] = React.useState('')
+    const [email, setEmail] = React.useState('')
+    const [message, setMessage] = React.useState('')
+    const { alert, displayAlert } = useAlert()
 
     React.useEffect(() => {
         if (visible) {
@@ -36,8 +42,35 @@ const index = ({ visible }) => {
             document.getSelection().removeAllRanges();
             document.getSelection().addRange(selected);
         }
+        displayAlert('Copiado!', mode, 2500)
     }
 
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+        try {
+            const json = await fetch(`https://formsubmit.co/ajax/${process.env.NEXT_PUBLIC_EMAIL}`, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    message
+                })
+            })
+            const {success} = await json.json()
+            if(success === 'true'){
+                displayAlert('Mensagem enviada! Em breve retornarei sua mensagem!', '#28a745', 10000)
+            }else{
+                displayAlert('Ops! Ocorreu um erro ao enviar sua mensagem!', null, 7000)
+            }
+        } catch (e) {
+            displayAlert('Ops! Ocorreu um erro ao enviar sua mensagem! Tente mais tarde.', null, 7000)
+        }
+    }
 
     return (
         <StyledContact mode={mode} id='contact' visible={visible}>
@@ -47,18 +80,21 @@ const index = ({ visible }) => {
                 <p className={show < 2 ? styles.opacity : styles.visibleOne}>{english ? "i'm open to work!" : 'Estou disponível para trabalho!'}</p>
             </StyledTitle>
             <StyledDiv className={show < 3 ? styles.opacity : styles.visibleTwo}>
-                <StyledForm>
+                <StyledForm onSubmit={handleSubmit}>
                     <label>
                         <p>{english ? 'Name' : 'Nome'}:</p>
-                        <StyledInput type='text' mode={mode} placeholder={english ? 'Enter your name...' : 'Digite seu nome...'} />
+                        <StyledInput type='text' mode={mode} placeholder={english ? 'Enter your name...' : 'Digite seu nome...'}
+                            required value={name} onChange={({ target }) => setName(target.value)} />
                     </label>
                     <label>
                         <p>E-mail:</p>
-                        <StyledInput type='text' mode={mode} placeholder={english ? 'Enter your e-mail...' : 'Digite seu e-mail...'} />
+                        <StyledInput type='email' mode={mode} placeholder={english ? 'Enter your e-mail...' : 'Digite seu e-mail...'}
+                            required value={email} onChange={({ target }) => setEmail(target.value)} />
                     </label>
                     <label>
                         <p>{english ? 'Message' : 'Mensagem'}:</p>
-                        <StyledTextarea mode={mode} placeholder={english ? 'Enter your message...' : 'Digite sua mensagem...'} />
+                        <StyledTextarea mode={mode} placeholder={english ? 'Enter your message...' : 'Digite sua mensagem...'}
+                            required value={message} onChange={({ target }) => setMessage(target.value)} />
                     </label>
                     <StyledButton mode={mode}>{english ? 'Send' : 'Enviar'}</StyledButton>
                 </StyledForm>
@@ -75,6 +111,7 @@ const index = ({ visible }) => {
                 </StyledContactInfo>
                 <img src='/notebook.png' alt='Notebook com duas mãos se cumprimentando' />
             </StyledDiv>
+            <Alert alert={alert} />
         </StyledContact>
     )
 }
