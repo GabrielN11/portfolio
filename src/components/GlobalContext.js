@@ -11,13 +11,11 @@ export const GlobalProvider = ({children}) => {
         const localLanguage = localStorage.getItem('language')
         document.querySelector('body').classList.add(localMode + 'Scroll')
         document.querySelector('html').classList.add(localMode + 'Scroll')
-        if(localMode){
-            setMode(localMode)
-        }else{
-            setMode(() => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-        }
+        if(localMode) setMode(localMode)
+        else setMode(() => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
         
         if(localLanguage === 'true') setEnglish(true)
+        else setEnglish(() => navigator.language === 'pt-BR' || navigator.language === 'pt-PT' ? false : true)
 
     }, [])
     return (

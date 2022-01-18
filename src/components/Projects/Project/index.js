@@ -20,7 +20,7 @@ const index = ({ name, textPt, textEn, images, repo, site, setImage }) => {
                 <StyledTextTitle>{name}</StyledTextTitle>
                 <StyledProjectText mode={mode}>{english ? textEn : textPt}</StyledProjectText>
                 <StyledIcons>
-                    <a title={repo ? (english ? 'Access the repository' : 'Visitar o repisitório') : (english ? 'Repository unavailable' : 'Repositório indisponível')} href={repo || undefined} target='_blank'>
+                    <a title={repo ? (english ? 'Access the repository' : 'Visitar o repositório') : (english ? 'Repository unavailable' : 'Repositório indisponível')} href={repo || undefined} target='_blank'>
                         <SvgGithub color={mode === 'light' ? '#1b1b1b' : mode === 'dark' ? '#c7c7c7' : '#ad94ca'} size={35} available={repo} />
                     </a>
                     <a title={site ? (english ? 'Access the project website' : 'Visitar site do projeto') : (english ? 'Site unavailable' : 'Site indisponível')} href={site || undefined} target='_blank'>

@@ -29,7 +29,9 @@ const index = ({ visible }) => {
             <StyledAboutText>
                 <StyledTextTitle className={show < 3 ? styles.opacity : styles.visible}>{english ? 'A little about me...' : 'Um pouco sobre mim...'}</StyledTextTitle>
                 <StyledText className={show < 4 ? styles.opacity : styles.visible}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    {english ? 
+                    '' : 
+                    'Sou um desenvolvedor web de 23 anos formado em Análise e Desenvolvimento de Sistemas, resido na capital de São Paulo, Brasil. Sou entusiasmado para aprender, aprimorar e me adaptar cada vez mais ao mundo da tecnologia e transformar todo esse conhecimento e prática em resultados práticos que possam ajudar, agradar e conquistar as pessoas que buscam navegar pelos meus projetos. Atualmente costumo praticar e me aprimorar no desenvolvimento de páginas intuitívas, responsivas, objetivas, funcionais e eficientes com tecnologias modernas que possam oferecer uma agradável interface e experiência de usuário.'}
                 </StyledText>
             </StyledAboutText>
             <StyledAboutBottom className={show < 5 ? styles.opacity : styles.visible}>

@@ -25,7 +25,7 @@ export const StyledContact = styled.section`
         flex-wrap: nowrap;
         height: 1100px;
     }
-    @media(max-width: 350px){
+    @media(max-width: 400px){
         height: 1300px;
     }
 `
@@ -99,6 +99,10 @@ export const StyledContactInfo = styled.div`
         opacity: 0.9;
         margin: 0;
         cursor: pointer;
+    }
+    a{
+        align-self: center;
+        margin-top: 20px;
     }
 `
 

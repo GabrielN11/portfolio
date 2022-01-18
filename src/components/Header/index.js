@@ -37,17 +37,17 @@ const index = ({ setTransition}) => {
                     </Link>
                 </StyledNavItem>
                 <StyledNavItem mode={mode}>
-                    <Link smooth duration={500} to='skills' offset={-70}>
+                    <Link smooth duration={700} to='skills' offset={-70}>
                         <p>{english ? 'SKILLS' : 'HABILIDADES'}</p>
                     </Link>
                 </StyledNavItem>
                 <StyledNavItem mode={mode}>
-                    <Link smooth duration={500} to='projects' offset={-70}>
+                    <Link smooth duration={900} to='projects' offset={-70}>
                         <p>{english ? 'PROJECTS' : 'PROJETOS'}</p>
                     </Link>
                 </StyledNavItem>
                 <StyledNavItem mode={mode}>
-                    <Link smooth duration={500} to='contact'>
+                    <Link smooth duration={1100} to='contact'>
                         <p>{english ? 'CONTACT ME' : 'CONTATO'}</p>
                     </Link>
                 </StyledNavItem>

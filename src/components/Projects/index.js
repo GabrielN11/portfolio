@@ -93,7 +93,7 @@ const projects = [
     },
     {
         name: 'iFood Interface Clone',
-        textPt: 'Meu primeiro aplicativo desenvolvido com React Native, este projeto foi feito como desafio do Bootcamp MRV na DIO. É uma cópia das interface inicial o iFood (12/2021) com uso de uma API pública disponibilizada pelo curso. Foi utilizado Expo, Android Studio para emular um Android no ambiente de desenvolvimento e testes no meu próprio dispostivo. Também foi utilizado React Navigation para gerenciar a navegação entre as páginas da aplicação.',
+        textPt: 'Meu primeiro aplicativo desenvolvido com React Native, este projeto foi feito como desafio do Bootcamp MRV na DIO. É uma cópia da interface inicial o iFood (12/2021) com uso de uma API pública disponibilizada pelo curso. Foi utilizado Expo, Android Studio para emular um Android no ambiente de desenvolvimento e testes no meu próprio dispostivo. Também foi utilizado React Navigation para gerenciar a navegação entre as páginas da aplicação.',
         textEn: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,' + 
         'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore' + 
         'eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -162,7 +162,7 @@ const index = ({setImage, image}) => {
             }else{
                 swiperRef.current.swiper.autoplay.start()
             }
-        }, {threshold: [0.5]})
+        }, {threshold: [0.4]})
         observer.observe(document.querySelector('#projects'))
     }, [])
 

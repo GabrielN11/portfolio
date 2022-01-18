@@ -4,6 +4,7 @@ import { StyledButton, StyledContact, StyledContactInfo, StyledDiv, StyledForm, 
 import styles from './Contact.module.css'
 import useAlert from '../../hooks/useAlert'
 import Alert from '../Alert/Alert'
+import SvgLinkedin from '../../assets/SvgLinkedin'
 
 const index = ({ visible }) => {
     const { mode, english } = React.useContext(GlobalContext)
@@ -61,10 +62,10 @@ const index = ({ visible }) => {
                     message
                 })
             })
-            const {success} = await json.json()
-            if(success === 'true'){
+            const { success } = await json.json()
+            if (success === 'true') {
                 displayAlert('Mensagem enviada! Em breve retornarei sua mensagem!', '#28a745', 10000)
-            }else{
+            } else {
                 displayAlert('Ops! Ocorreu um erro ao enviar sua mensagem!', null, 7000)
             }
         } catch (e) {
@@ -108,6 +109,9 @@ const index = ({ visible }) => {
                     <p onClick={() => copyContact('+55 11 99180-4000')}>+55 11 99180-4000</p>
                     <h3>E-mail</h3>
                     <p onClick={() => copyContact('gabrielnunes11c@gmail.com')}>gabrielnunes11c@gmail.com</p>
+                    <a title='Linkedin' href='https://www.linkedin.com/in/gabriel-nunes-51b2bb69' target='_blank'>
+                        <SvgLinkedin color='#ccc' size={35} />
+                    </a>
                 </StyledContactInfo>
                 <img src='/notebook.png' alt='Notebook com duas mãos se cumprimentando' />
             </StyledDiv>

@@ -33,6 +33,9 @@ export const StyledAbout = styled.section`
     @media(max-width: 550px){
         height: 750px;
     }
+    @media(max-width: 350px){
+        height: 950px;
+    }
     @media(max-width: 700px){
         flex-direction: column;
         flex-wrap: nowrap; 

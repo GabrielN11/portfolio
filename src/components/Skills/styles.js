@@ -1,20 +1,10 @@
 import styled, {keyframes} from "styled-components";
 
 const fadeIn = keyframes`
-    from{
-        transform: scale(0.8);
+    from{);
         opacity: 0;
     }to{
-        transform: initial;
         opacity: 1;
-    }
-`
-
-const sizeAnim = keyframes`
-    from{
-        transform: initial;
-    }to{
-        transform: scale(0.9);
     }
 `
 
@@ -77,7 +67,7 @@ export const StyledSkillInfo = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    @media(max-width: 700px){
+    @media(max-width: 850px){
         flex-direction: column;
     }
     @media(max-width: 500px){
@@ -99,13 +89,8 @@ export const StyledSkillCloseAnim = styled.div`
     }
 `
 
-export const StyledSkillImg = styled.img`
-    user-select: none;
-    height: 200px;
-`
-
 export const StyledSkillDiv = styled.div`
-    width: 60%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -115,14 +100,12 @@ export const StyledSkillDiv = styled.div`
         width: 100%;
         height: 60%;
         justify-content: flex-start;
-    }
-    @media(max-width: 700px){
-        height: 70%;
+        padding: 20px;
     }
 `
 
-export const StyledSkillImgContainer = styled.div`
-    width: 40%;
+export const StyledSkillTitleContainer = styled.div`
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -130,12 +113,10 @@ export const StyledSkillImgContainer = styled.div`
     padding: 50px;
     @media(max-width: 700px){
         width: 100%;
-        height: 40%;
-    }
-    @media(max-width: 500px){
-        height: 30%;
+        height: 25%;
     }
 `
+
 
 export const StyledClose = styled.div`
     position: absolute;
@@ -144,13 +125,8 @@ export const StyledClose = styled.div`
     cursor: pointer;
 `
 
-export const StyledSkillInfoTitle = styled.h1`
-    font-size: 30px;
-    text-align: center;
-`
-
 export const StyledSkillText = styled.p`
-    font-size: 18px;
+    font-size: 1rem;
 `
 
 export const StyledSkillTitle = styled.h1`
@@ -162,46 +138,74 @@ export const StyledSkillTitle = styled.h1`
 `
 
 export const StyledSkillContainer = styled.div`
-    width: 25%;
-    height: 50%;
+    width: 50%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 15px;
     animation: ${fadeIn} 2s forwards;
     cursor: pointer;
+    border-radius: 10px;
     &:hover{
         background-color: rgba(255, 255, 255, 0.1);
     }
-    @media(max-width: 1000px){
-        width: 33%;
-        height: 25%;
-    }
     @media(max-width: 650px){
-        width: 50%;
-        height: 15%;
-    }
-    @media(max-width: 350px){
         width: 100%;
-        height: 10%;
-    }
-`
-
-export const StyledIcon = styled.img`
-    height: 100px;
-    animation: ${sizeAnim} 2s infinite alternate-reverse;
-    @media(max-width: 1000px){
-        height: 85px;
-    }
-    @media(max-width: 650px){
-        height: 70px;
-    }
-    @media(max-width: 350px){
-        height: 55px;
+        height: 40%;
     }
 `
 
 export const StyledSkillName = styled.h1`
-    font-size: 20px;
+    font-size: 2rem;
+    padding: 1rem;
+    border: 1px solid #fff;
+`
+
+export const StyledHardSkillContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-around;
+    width: 70%;
+    height: 100%;
+    padding: 2rem;
+    @media(max-width: 850px){
+        width: 100%;
+        height: 75%;
+        padding: 1rem;
+    }
+`
+
+export const StyledHardSkill = styled.div`
+    width: 25%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform .3s;
+    text-align: center;
+    & img{
+        height: 75px;
+    }
+    & h1{
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+    &:hover{
+        transform: scale(1.1);
+    }
+    @media(max-width: 950px){
+        width: 33%;
+    }
+    @media(max-width: 850px){
+        & img{
+            height: 50px;
+        }
+        & h1{
+            font-size: 0.8rem;
+        }
+        width: 33%;
+        height: 25%;
+    }
 `

@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+const zoomImage = (translate) =>  keyframes`
+    from{
+        transform: scale(0.3) ${translate && 'translate(1000px)'};
+    }
+    to{
+        transform: initial;
+    }
+`
 
 
 export const StyledProjectSection = styled.section`
@@ -103,6 +112,10 @@ export const StyledImageZoom = styled.div`
     & img{
         max-height: 90%;
         max-width: 90%;
+        animation: ${zoomImage(true)} 0.5s forwards;
+        @media(max-width: 800px){
+            animation: ${zoomImage(false)} 0.5s forwards};
+        }
     }
 `
 
