@@ -171,7 +171,7 @@ export const StyledChangerMenu = styled.div`
     width: 100px;
     top: 22px;
     border-radius: 10px;
-    padding: 10px 0px;
+    padding: 30px 0px 10px 0px;
     background-color: ${({ mode }) => mode === 'light' ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.5)'};
     display: flex;
     flex-direction: column;
