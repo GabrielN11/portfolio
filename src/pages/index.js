@@ -15,15 +15,15 @@ const index = () => {
   const [visible, setVisible] = React.useState({
     about: false,
     skills: false,
-    contact: false
+    contact: false,
   })
   const { mode } = React.useContext(GlobalContext)
 
   React.useEffect(() => {
     const about = document.querySelector('#about')
     const skills = document.querySelector('#skills')
-    const contact = document.querySelector('#contact')
-    
+    const contact = document.querySelector('#contact')   
+
     let aboutObserver = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.7) {
         setVisible(current => ({ ...current, about: true }))
@@ -47,6 +47,7 @@ const index = () => {
         setVisible(current => ({ ...current, contact: false }))
       }
     }, { threshold: [0.4, 0.1] })
+
     aboutObserver.observe(about)
     skillsObserver.observe(skills)
     contactObserver.observe(contact)
@@ -56,11 +57,12 @@ const index = () => {
     <>
       <Head>
         <title>Gabriel Nunes</title>
+        <meta name='description' content='Front End developer with a passion for developing modern, responsive and pleasant websites with a great UI/UX'></meta>
       </Head>
       <Header setTransition={setTransition} visible={visible.header} />
       <About visible={visible.about} />
       <Skills visible={visible.skills} />
-      <Projects image={image} setImage={setImage} />
+      <Projects image={image} setImage={setImage}/>
       <Contact visible={visible.contact} />
       <ScrollTop mode={mode}/>
       <div className={!transition ? 'none' : 'fadeInFadeOut'} />

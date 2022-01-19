@@ -1,7 +1,7 @@
 import React from 'react'
 import SvgGithub from '../../../assets/SvgGithub'
 import SvgLink from '../../../assets/SvgLink'
-import { StyledIcons, StyledImages, StyledImageZoom, StyledInfo, StyledProject, StyledProjectText } from '../styles'
+import { StyledIcons, StyledImages, StyledImageZoom, StyledInfo, StyledProject, StyledProjectText, StyledSpin } from '../styles'
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, A11y, Autoplay, EffectFlip } from 'swiper'
 import 'swiper/css'
@@ -12,8 +12,9 @@ import styles from './Project.module.css'
 import { StyledTextTitle } from '../../About/styles'
 import { GlobalContext } from '../../GlobalContext'
 
-const index = ({ name, textPt, textEn, images, repo, site, setImage }) => {
+const index = ({ name, textPt, textEn, images, repo, site, setImage, visible }) => {
     const { english, mode } = React.useContext(GlobalContext)
+    const [loaded, setLoaded] = React.useState(new Array(images.length)) // A função desse estado e sua lógica é para optimizar o loading inicial da aplicação, carregando imagens apenas quando a sessão se torna visível
     return (
         <StyledProject mode={mode}>
             <StyledInfo>
@@ -30,10 +31,16 @@ const index = ({ name, textPt, textEn, images, repo, site, setImage }) => {
             </StyledInfo>
             <Swiper className={styles.swiper} autoplay={{ delay: 5000, disableOnInteraction: false }} modules={[Pagination, Autoplay, A11y, EffectFlip]}
             effect='flip'>
-                {images.map(image => (
+                {images.map((image, i) => (
                     <SwiperSlide key={image.description}>
                         <StyledImages onClick={() => setImage(image.url)}>
-                            <img src={image.url} alt={image.description} draggable={false} />
+                            {visible && <img className={loaded[i] ? undefined : 'none'} src={image.url} alt={image.description} draggable={false} onLoad={() => {
+                                setLoaded(current => {
+                                    current[i] = true
+                                    return [...current]
+                                })
+                            }} />}
+                            {!loaded[i] && <StyledSpin mode={mode}/>}
                         </StyledImages>
                     </SwiperSlide>
                 ))}

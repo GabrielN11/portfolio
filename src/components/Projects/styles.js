@@ -9,6 +9,12 @@ const zoomImage = (translate) =>  keyframes`
     }
 `
 
+const loading = keyframes`
+    to{
+        transform: rotate(360deg);
+    }
+`
+
 
 export const StyledProjectSection = styled.section`
     max-width: 100vw;
@@ -124,4 +130,13 @@ export const StyledClose = styled.div`
     top: 10px;
     right: 10px;
     cursor: pointer;
+`
+
+export const StyledSpin = styled.div`
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 5px solid ${({mode}) => mode !== 'twilight' ? '#0071DC' : '#ad94ca'};
+    border-right-color: transparent;
+    animation: ${loading} 1s infinite;   
 `

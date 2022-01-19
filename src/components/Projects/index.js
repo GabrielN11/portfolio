@@ -13,7 +13,7 @@ const projects = [
     {
         name: 'Campos - Arquitetura e Engenharia',
         textPt: 'Este projeto foi meu primeiro freelance feito para uma empresa de engenharia arquitetura que precisava atualizar seu website. Foi inicialmente feito em ReactJS e posteriormente migrado para Next.JS para ser amigável aos SEOs e atingir mais clientes. Também foi desenvolvida uma API em NodeJS e um banco de dados mySQL para armazenar imagens que o proprietário queira publicar para os visitantes, além dos itens relacionados ao serviços que podem ser trocados dinamicamente pelo proprietário. Em breve estará no ar.',
-        textEn: "This was my first freelance project developed for an architecture and engineering firm that needed to update their website. It was initially developed with ReactJS and later migrated to Next.JS to be SEO friendly and reach more clients. I've also developed a NodeJS API and a mySQL database to store images that the owner wants to publish for visitors, in addition to service-related items that can be dynamically exchanged by the owner. It will be on the air soon. ",
+        textEn: "This was my first freelance project developed for an architecture and engineering firm that needed to update their website. It was initially developed with ReactJS and later migrated to Next.JS to be SEO friendly and reach more clients. I've also developed a NodeJS API and a mySQL database to store images that the owner wants to publish for visitors, in addition to service-related items that can be dynamically exchanged by the owner. It will be on air soon. ",
         images : [
             {
                 url: '/arqeng1.png',
@@ -87,8 +87,8 @@ const projects = [
     },
     {
         name: 'iFood Interface Clone',
-        textPt: 'Meu primeiro aplicativo desenvolvido com React Native, este projeto foi feito como desafio do Bootcamp MRV na DIO. É uma cópia da interface inicial o iFood (12/2021) e com uso de uma API pública disponibilizada pelo curso. Foi utilizado Expo, Android Studio para emular um Android no ambiente de desenvolvimento e testes no meu próprio dispostivo. Também foi utilizado React Navigation para gerenciar a navegação entre as páginas da aplicação.',
-        textEn: "My first mobile app developed with React Native, this project was developed as a challenge from MRV Bootcamp at DIO. It is a clone from iFood's initial interface (12/2021) and using a public API provided by the course. I used Expo, Android Studio to emulate a Android system in the development environment and tests using my own device. React Navigation was also used to manage navigation between the app pages.",
+        textPt: 'Meu primeiro aplicativo desenvolvido com React Native, este projeto foi feito como desafio do Bootcamp MRV na DIO. É uma cópia da interface inicial o iFood (12/2021) com uso de uma API pública disponibilizada pelo curso. Foi utilizado Expo, Android Studio para emular um Android no ambiente de desenvolvimento e testes no meu próprio dispostivo. Também foi utilizado React Navigation para gerenciar a navegação entre as páginas da aplicação.',
+        textEn: "My first mobile app developed with React Native, this project was developed as a challenge from MRV Bootcamp at DIO. It is a clone from iFood's initial interface (12/2021) using a public API provided by the course. I used Expo, Android Studio to emulate an Android system in the development environment and tests using my own device. React Navigation was also used to manage navigation between the app pages.",
         images : [
             {
                 url: '/ifood1.png',
@@ -136,6 +136,7 @@ const projects = [
 const index = ({setImage, image}) => {
     const { mode } = React.useContext(GlobalContext)
     const swiperRef = React.useRef(null)
+    const [visible, setVisible] = React.useState(false)
 
     React.useEffect(() => {
         if(!image){
@@ -153,6 +154,16 @@ const index = ({setImage, image}) => {
                 swiperRef.current.swiper.autoplay.start()
             }
         }, {threshold: [0.4]})
+
+        const imgObserver = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting){
+                setVisible(true)
+            }else{
+                setVisible(false)
+            }
+        }, {threshold: [0.1]})
+        
+        imgObserver.observe(document.querySelector('#projects'))
         observer.observe(document.querySelector('#projects'))
     }, [])
 
@@ -176,7 +187,7 @@ const index = ({setImage, image}) => {
                 {projects.map(project => (
                     <SwiperSlide key={project.name}>
                         <Project name={project.name} textEn={project.textEn} textPt={project.textPt} images={project.images}
-                        repo={project.repo} site={project.site} setImage={setImage}/>
+                        repo={project.repo} site={project.site} setImage={setImage} visible={visible}/>
                     </SwiperSlide>
                 ))}
             </Swiper>

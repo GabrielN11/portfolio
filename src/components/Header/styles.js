@@ -62,7 +62,7 @@ export const StyledHeader = styled.header`
     background-image: ${({ mode }) => {
         if (mode === 'light') return 'url(/day-background.png)'
         if (mode === 'dark') return 'url(/night-background.png)'
-        return 'url(/twilight-background.png)'
+        return 'url(/twilight-background.jpg)'
     }};
 `
 
