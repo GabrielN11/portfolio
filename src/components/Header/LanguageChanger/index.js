@@ -32,7 +32,7 @@ const LanguageChanger = () => {
     }
     return (
         <StyledChangeMode onMouseEnter={() => setSubMenu(true)} onMouseLeave={() => setSubMenu(false)} ref={langRef}>
-            <div onClick={() => setSubMenu(current => !current)}>
+            <div onClick={() => setSubMenu(true)}>
                 <p className={!english ? 'none' : undefined}>En</p>
                 <p className={english ? 'none' : undefined}>Pt</p>
             </div>

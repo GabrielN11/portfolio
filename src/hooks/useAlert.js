@@ -4,7 +4,7 @@ const useAlert = () => {
     const [alert, setAlert] = React.useState({items: []})
     const timeout = React.useRef()
 
-    const displayAlert = React.useCallback((text= 'Alerta disparado.', type = '#dc3545', duration=5000) => {
+    const displayAlert = React.useCallback((text= 'Alerta disparado.', type, duration=5000) => {
 
         const id = Math.random() * (1000 - 1) + 1
 
@@ -12,6 +12,7 @@ const useAlert = () => {
             if(type === 'light') return '#13243d'
             if(type === 'dark') return '#235269'
             if(type === 'twilight') return '#945060'
+            if(!type) return '#dc3545'
             return type
         }
 

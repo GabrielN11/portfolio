@@ -45,7 +45,7 @@ const ModeChanger = ({ setTransition }) => {
     return (
         <>
             <StyledChangeMode onMouseEnter={() => setSubMenu(true)} onMouseLeave={() => setSubMenu(false)} ref={themeRef}>
-                <div onClick={() => setSubMenu(current => !current)}>
+                <div onClick={() => setSubMenu(true)}>
                     <SvgMoon className={mode !== 'dark' ? 'none' : undefined} />
                     <SvgSun className={mode !== 'light' ? 'none' : undefined} />
                     <SvgSunset className={mode !== 'twilight' ? 'none' : undefined} />

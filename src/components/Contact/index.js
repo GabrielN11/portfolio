@@ -65,6 +65,9 @@ const Contact = ({ visible }) => {
             const { success } = await json.json()
             if (success === 'true') {
                 displayAlert(english ? 'Message sent! I will return your message soon!' : 'Mensagem enviada! Em breve retornarei sua mensagem!', '#28a745', 10000)
+                setMessage('')
+                setName('')
+                setEmail('')
             } else {
                 displayAlert( english ? 'Oops! There was an error sending your message!' : 'Ops! Ocorreu um erro ao enviar sua mensagem!', null, 7000)
             }
