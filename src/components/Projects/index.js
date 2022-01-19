@@ -12,10 +12,8 @@ import 'swiper/css/autoplay'
 const projects = [
     {
         name: 'Campos - Arquitetura e Engenharia',
-        textPt: 'Este projeto foi meu primeiro freelance feito para uma empresa de engenharia arquitetura que precisava atualizar seu website. Foi inicialmente feito em ReactJS e posteriormente migrado para Next.JS para ser amigável aos SEOs e atingir mais clientes. Também foi desenvolvida uma API em NodeJS para armazenar imagens que o proprietário queira publicar para os visitantes, além dos itens relacionados ao serviços que podem ser trocados dinamicamente pelo proprietário. Em breve estará no ar.',
-        textEn: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,' + 
-        'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore' + 
-        'eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        textPt: 'Este projeto foi meu primeiro freelance feito para uma empresa de engenharia arquitetura que precisava atualizar seu website. Foi inicialmente feito em ReactJS e posteriormente migrado para Next.JS para ser amigável aos SEOs e atingir mais clientes. Também foi desenvolvida uma API em NodeJS e um banco de dados mySQL para armazenar imagens que o proprietário queira publicar para os visitantes, além dos itens relacionados ao serviços que podem ser trocados dinamicamente pelo proprietário. Em breve estará no ar.',
+        textEn: "This was my first freelance project developed for an architecture and engineering firm that needed to update their website. It was initially developed with ReactJS and later migrated to Next.JS to be SEO friendly and reach more clients. I've also developed a NodeJS API and a mySQL database to store images that the owner wants to publish for visitors, in addition to service-related items that can be dynamically exchanged by the owner. It will be on the air soon. ",
         images : [
             {
                 url: '/arqeng1.png',
@@ -44,9 +42,7 @@ const projects = [
     {
         name: 'E-Commerce',
         textPt: 'Inspirado no vídeo do youtube do canal JavaScript Mastery que ensinava como usar uma API de comércio eletrônico, decidi desenvolver este e-commerce utilizando a API CommerceJS junto ao front-end totalmente desenvolvido por mim. O site foi feito em ReactJS e responde a todos os dados vindos da API: categorias, produtos, imagens, etc, todos itens da loja eletrônica que pode ser criada no painel do CommerceJS. Você pode checar a documentação do projeto no GitHub para mais informações e também visitá-lo para conferir as funcionalidades.',
-        textEn: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,' + 
-        'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore' + 
-        'eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        textEn: "Inspired by the JavaScript Mastery channel youtube video that teaches how to use an ecommerce API, i decided to develop this e-commerce using CommerceJS API and the front-end fully developed by me. The site was developed with ReactJS and responds to all data comming from the API: categories, products, images, etc, all the items from the electronic store that can be created through Commerce JS panel. You can check the project's documentation on GitHub for more informations and also visit it to check out the freatures.",
         images : [
             {
                 url: '/ecommerce1.png',
@@ -70,10 +66,8 @@ const projects = [
     },
     {
         name: 'Death Star Rampage',
-        textPt: 'Este foi um projeto desenvolvido como desafio do Bootcamp MRV na DIO. Se trata de um jogo inspirado na franquia Star Wars onde você assume a posição dos antagonistas, controlando a mortífera Estrela da Morte e precisa destruir planetas rebeldes pela galáxia. Se trata de um jogo 2D com alguns efeitos sonoros, movimentação dos elementos, detecção de impacto e outras funções. Foi desenvolvido com jQuery.',
-        textEn: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,' + 
-        'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore' + 
-        'eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        textPt: 'Este foi um projeto desenvolvido como desafio do Bootcamp MRV na DIO. Se trata de um jogo baseado na franquia Star Wars onde você assume a posição dos antagonistas, controlando a mortífera Estrela da Morte e precisa destruir planetas rebeldes pela galáxia. Se trata de um jogo 2D com alguns efeitos sonoros, movimentação dos elementos, detecção de impacto e outras funções. Foi desenvolvido com jQuery.',
+        textEn: "This project was developed as a challenge for MRV Bootcamp at DIO. It's a game based on the Star Wars franchise where you assume the position of the antagonists, controlling the deadly Death Star to destroy rebel planets across the galaxy. It's a 2D game with sound effects, elements movement, impact detection and other freatures. It was developed using jQuery.",
         images : [
             {
                 url: '/deathstar1.png',
@@ -93,10 +87,8 @@ const projects = [
     },
     {
         name: 'iFood Interface Clone',
-        textPt: 'Meu primeiro aplicativo desenvolvido com React Native, este projeto foi feito como desafio do Bootcamp MRV na DIO. É uma cópia da interface inicial o iFood (12/2021) com uso de uma API pública disponibilizada pelo curso. Foi utilizado Expo, Android Studio para emular um Android no ambiente de desenvolvimento e testes no meu próprio dispostivo. Também foi utilizado React Navigation para gerenciar a navegação entre as páginas da aplicação.',
-        textEn: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,' + 
-        'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore' + 
-        'eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        textPt: 'Meu primeiro aplicativo desenvolvido com React Native, este projeto foi feito como desafio do Bootcamp MRV na DIO. É uma cópia da interface inicial o iFood (12/2021) e com uso de uma API pública disponibilizada pelo curso. Foi utilizado Expo, Android Studio para emular um Android no ambiente de desenvolvimento e testes no meu próprio dispostivo. Também foi utilizado React Navigation para gerenciar a navegação entre as páginas da aplicação.',
+        textEn: "My first mobile app developed with React Native, this project was developed as a challenge from MRV Bootcamp at DIO. It is a clone from iFood's initial interface (12/2021) and using a public API provided by the course. I used Expo, Android Studio to emulate a Android system in the development environment and tests using my own device. React Navigation was also used to manage navigation between the app pages.",
         images : [
             {
                 url: '/ifood1.png',
@@ -121,9 +113,7 @@ const projects = [
     {
         name: 'Ask&Answer',
         textPt: 'Este pequeno projeto foi desenvolvido em poucas horas durante uma noite onde eu estava sem conexão com a internet, então decidi praticar um pouco de ReactJS. Criei rapidamente uma API NodeJS e um banco de dados mySQL e então desenvolvi este simples front-end onde você pode realizar perguntas e responder perguntas feitas por outros usuários.',
-        textEn: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,' + 
-        'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore' + 
-        'eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        textEn: "This small project was developed in a few hours during a night when I had no internet, so I decided to practice ReactJS a little. I quickly created a NodeJS API and a mySQL database, then I developed this simple front-end where you can ask questions and answer other users questions.",
         images : [
             {
                 url: '/ask1.png',

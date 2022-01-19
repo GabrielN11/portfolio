@@ -43,7 +43,7 @@ const index = ({ visible }) => {
             document.getSelection().removeAllRanges();
             document.getSelection().addRange(selected);
         }
-        displayAlert('Copiado!', mode, 2500)
+        displayAlert(english ? 'Copied!' : 'Copiado!', mode, 2500)
     }
 
 
@@ -64,12 +64,12 @@ const index = ({ visible }) => {
             })
             const { success } = await json.json()
             if (success === 'true') {
-                displayAlert('Mensagem enviada! Em breve retornarei sua mensagem!', '#28a745', 10000)
+                displayAlert(english ? 'Message sent! I will return your message soon!' : 'Mensagem enviada! Em breve retornarei sua mensagem!', '#28a745', 10000)
             } else {
-                displayAlert('Ops! Ocorreu um erro ao enviar sua mensagem!', null, 7000)
+                displayAlert( english ? 'Oops! There was an error sending your message!' : 'Ops! Ocorreu um erro ao enviar sua mensagem!', null, 7000)
             }
         } catch (e) {
-            displayAlert('Ops! Ocorreu um erro ao enviar sua mensagem! Tente mais tarde.', null, 7000)
+            displayAlert(english ? 'Oops! There was an error sending your message! Try again later.' : 'Ops! Ocorreu um erro ao enviar sua mensagem! Tente mais tarde.', null, 7000)
         }
     }
 
