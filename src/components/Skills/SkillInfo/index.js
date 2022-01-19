@@ -46,7 +46,7 @@ const skills = [
     },
 ]
 
-const index = ({ title, softSkill, showInfo, setShowInfo }) => {
+const SkillInfo = ({ title, softSkill, showInfo, setShowInfo }) => {
     const [closeAnim, setCloseAnim] = React.useState(false)
     const { english } = React.useContext(GlobalContext)
 
@@ -85,4 +85,4 @@ const index = ({ title, softSkill, showInfo, setShowInfo }) => {
     )
 }
 
-export default index
+export default SkillInfo

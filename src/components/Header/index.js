@@ -6,7 +6,7 @@ import LanguageChanger from './LanguageChanger'
 import MobileNav from './MobileNav'
 import { Link } from 'react-scroll'
 
-const index = ({ setTransition}) => {
+const Header = ({ setTransition}) => {
     const { mode, english } = React.useContext(GlobalContext)
     const [mobileNav, setMobileNav] = React.useState(false)
 
@@ -67,4 +67,4 @@ const index = ({ setTransition}) => {
     )
 }
 
-export default index
+export default Header

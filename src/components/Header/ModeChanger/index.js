@@ -23,7 +23,7 @@ function useOutsideAlerter(ref, setSubMenu) {
 }
 
 
-const index = ({ setTransition }) => {
+const ModeChanger = ({ setTransition }) => {
     const [subMenu, setSubMenu] = React.useState(false)
     const { mode, setMode } = React.useContext(GlobalContext)
     const themeRef = React.useRef(null)
@@ -66,4 +66,4 @@ const index = ({ setTransition }) => {
     )
 }
 
-export default index
+export default ModeChanger

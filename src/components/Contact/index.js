@@ -6,7 +6,7 @@ import useAlert from '../../hooks/useAlert'
 import Alert from '../Alert/Alert'
 import SvgLinkedin from '../../assets/SvgLinkedin'
 
-const index = ({ visible }) => {
+const Contact = ({ visible }) => {
     const { mode, english } = React.useContext(GlobalContext)
     const [show, setShow] = React.useState(0)
     const [name, setName] = React.useState('')
@@ -109,7 +109,7 @@ const index = ({ visible }) => {
                     <p onClick={() => copyContact('+55 11 99180-4000')}>+55 11 99180-4000</p>
                     <h3>E-mail</h3>
                     <p onClick={() => copyContact('gabrielnunes11c@gmail.com')}>gabrielnunes11c@gmail.com</p>
-                    <a title='Linkedin' href='https://www.linkedin.com/in/gabriel-nunes-51b2bb69' target='_blank'>
+                    <a title='Linkedin' href='https://www.linkedin.com/in/gabriel-nunes-51b2bb69' target='_blank' rel="noreferrer">
                         <SvgLinkedin color='#ccc' size={35} />
                     </a>
                 </StyledContactInfo>
@@ -120,4 +120,4 @@ const index = ({ visible }) => {
     )
 }
 
-export default index
+export default Contact

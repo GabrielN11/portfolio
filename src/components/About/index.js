@@ -6,7 +6,7 @@ import SvgLinkedin from '../../assets/SvgLinkedin'
 import SvgGithub from '../../assets/SvgGithub'
 import SvgDio from '../../assets/SvgDio'
 
-const index = ({ visible }) => {
+const About = ({ visible }) => {
     const [show, setShow] = React.useState(0)
     const { mode, english } = React.useContext(GlobalContext)
     React.useEffect(() => {
@@ -35,13 +35,13 @@ const index = ({ visible }) => {
                 </StyledText>
             </StyledAboutText>
             <StyledAboutBottom className={show < 5 ? styles.opacity : styles.visible}>
-                <a title='Linkedin' href='https://www.linkedin.com/in/gabriel-nunes-51b2bb69' target='_blank'>
+                <a title='Linkedin' href='https://www.linkedin.com/in/gabriel-nunes-51b2bb69' target='_blank' rel="noreferrer">
                     <SvgLinkedin color={mode === 'light' ? '#1b1b1b' : mode === 'dark' ? '#c7c7c7' : '#945060'} size={35} />
                 </a>
-                <a title='GitHub' href='https://github.com/GabrielN11' target='_blank'>
+                <a title='GitHub' href='https://github.com/GabrielN11' target='_blank' rel="noreferrer">
                     <SvgGithub color={mode === 'light' ? '#1b1b1b' : mode === 'dark' ? '#c7c7c7' : '#945060'} size={35} />
                 </a>
-                <a title='dio._' href='https://web.dio.me/users/gabrielnunes11c' target='_blank'>
+                <a title='dio._' href='https://web.dio.me/users/gabrielnunes11c' target='_blank' rel="noreferrer">
                     <SvgDio color={mode === 'light' ? '#1b1b1b' : mode === 'dark' ? '#c7c7c7' : '#945060'} size={70} />
                 </a>
             </StyledAboutBottom>
@@ -49,4 +49,4 @@ const index = ({ visible }) => {
     )
 }
 
-export default index
+export default About

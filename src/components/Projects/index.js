@@ -133,7 +133,7 @@ const projects = [
     },
 ]
 
-const index = ({setImage, image}) => {
+const Projects = ({setImage, image}) => {
     const { mode } = React.useContext(GlobalContext)
     const swiperRef = React.useRef(null)
     const [visible, setVisible] = React.useState(false)
@@ -195,4 +195,4 @@ const index = ({setImage, image}) => {
     )
 }
 
-export default index
+export default Projects

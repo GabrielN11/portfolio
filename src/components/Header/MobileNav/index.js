@@ -3,7 +3,7 @@ import { GlobalContext } from '../../GlobalContext'
 import { StyledMobileNav, StyledMobileNavItem } from './styles'
 import {Link} from 'react-scroll'
 
-const index = () => {
+const MobileNav = () => {
     const {mode, english} = React.useContext(GlobalContext)
     return (
         <StyledMobileNav mode={mode}>
@@ -31,4 +31,4 @@ const index = () => {
     )
 }
 
-export default index
+export default MobileNav

@@ -20,7 +20,7 @@ function useOutsideAlerter(ref, setSubMenu) {
 }
 
 
-const index = () => {
+const LanguageChanger = () => {
     const [subMenu, setSubMenu] = React.useState(false)
     const { english, setEnglish, mode } = React.useContext(GlobalContext)
     const langRef = React.useRef(null)
@@ -49,4 +49,4 @@ const index = () => {
     )
 }
 
-export default index
+export default LanguageChanger

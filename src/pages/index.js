@@ -9,7 +9,7 @@ import { GlobalContext } from '../components/GlobalContext'
 import ImageZoom from '../components/Projects/ImageZoom'
 import ScrollTop from '../components/ScrollTop'
 
-const index = () => {
+const Main = () => {
   const [transition, setTransition] = React.useState(false)
   const [image, setImage] = React.useState(false)
   const [visible, setVisible] = React.useState({
@@ -71,4 +71,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Main

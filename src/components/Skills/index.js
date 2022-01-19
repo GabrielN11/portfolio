@@ -3,7 +3,7 @@ import { GlobalContext } from '../GlobalContext'
 import { StyledSkills, StyledIcon, StyledSkillContainer, StyledSkillName, StyledSkillTitle } from './styles'
 import SkillInfo from './SkillInfo'
 
-const index = ({ visible }) => {
+const Skills = ({ visible }) => {
     const [showInfo, setShowInfo] = React.useState(false)
     const [softSkill, setSoftskill] = React.useState(false)
     const { mode, english } = React.useContext(GlobalContext)
@@ -28,4 +28,4 @@ const index = ({ visible }) => {
     )
 }
 
-export default index
+export default Skills

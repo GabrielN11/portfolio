@@ -18,7 +18,7 @@ function useOutsideAlerter(ref, setSubMenu) {
     }, [ref]);
 }
 
-const index = ({image, setImage, mode}) => {
+const ImageZoom = ({image, setImage, mode}) => {
 
     const imgref = React.useRef(null)
     useOutsideAlerter(imgref, setImage)
@@ -39,4 +39,4 @@ const index = ({image, setImage, mode}) => {
     )
 }
 
-export default index
+export default ImageZoom
