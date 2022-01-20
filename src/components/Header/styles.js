@@ -226,8 +226,8 @@ export const StyledAutoScroll = styled.div`
     right: 0; 
     margin-left: auto; 
     margin-right: auto; 
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
     padding: 5px;
     border-radius: 50%;
     border: 3px solid rgba(255, 255, 255, 0.5);
