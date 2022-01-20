@@ -25,12 +25,12 @@ const Main = () => {
     const contact = document.querySelector('#contact')   
 
     let aboutObserver = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.7) {
+      if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.5) {
         setVisible(current => ({ ...current, about: true }))
       } else if (entries[0].intersectionRatio <= 0.1) {
         setVisible(current => ({ ...current, about: false }))
       }
-    }, { threshold: [0.7, 0.1] })
+    }, { threshold: [0.5, 0.1] })
 
     let skillsObserver = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.5) {

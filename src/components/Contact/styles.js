@@ -163,6 +163,7 @@ export const StyledTextarea = styled.textarea`
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
+    resize: none;
     background-color: ${({mode}) => {
         if(mode === 'light') return '#8EB7D5'
         if(mode === 'dark') return '#424958';

@@ -80,7 +80,7 @@ const Contact = ({ visible }) => {
         <StyledContact mode={mode} id='contact' visible={visible}>
             <StyledTitle>
                 <h2 className={styles.visibleOne}>{english ? 'Interested?' : 'Interessado?'}</h2>
-                <h1 className={show < 1 ? styles.opacity : styles.visibleOne}>{english ? 'Contact-me!' : 'Entre em contato!'}</h1>
+                <h1 className={show < 1 ? styles.opacity : styles.visibleOne}>{english ? 'Contact-me!' : 'Contate-me!'}</h1>
                 <p className={show < 2 ? styles.opacity : styles.visibleOne}>{english ? "i'm open to work!" : 'Estou disponível para trabalho!'}</p>
             </StyledTitle>
             <StyledDiv className={show < 3 ? styles.opacity : styles.visibleTwo}>
