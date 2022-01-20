@@ -1,12 +1,13 @@
 import React from 'react'
-import { StyledHeader, StyledName, StyledNavbar, StyledNavItem, StyledProfileAvatar, StyledStick, StyledTitle, StyledTitleDescription, StyledToggle } from './styles'
+import { StyledAutoScroll, StyledHeader, StyledName, StyledNavbar, StyledNavItem, StyledProfileAvatar, StyledStick, StyledTitle, StyledTitleDescription, StyledToggle } from './styles'
 import { GlobalContext } from '../GlobalContext'
 import ModeChanger from './ModeChanger'
 import LanguageChanger from './LanguageChanger'
 import MobileNav from './MobileNav'
 import { Link } from 'react-scroll'
+import SvgArrow from '../../assets/SvgArrow'
 
-const Header = ({ setTransition}) => {
+const Header = ({ setTransition }) => {
     const { mode, english } = React.useContext(GlobalContext)
     const [mobileNav, setMobileNav] = React.useState(false)
 
@@ -37,17 +38,17 @@ const Header = ({ setTransition}) => {
                     </Link>
                 </StyledNavItem>
                 <StyledNavItem mode={mode}>
-                    <Link smooth duration={700} to='skills' offset={-70}>
+                    <Link smooth duration={1000} to='skills' offset={-70}>
                         <p>{english ? 'SKILLS' : 'HABILIDADES'}</p>
                     </Link>
                 </StyledNavItem>
                 <StyledNavItem mode={mode}>
-                    <Link smooth duration={900} to='projects' offset={-70}>
+                    <Link smooth duration={1500} to='projects' offset={-70}>
                         <p>{english ? 'PROJECTS' : 'PROJETOS'}</p>
                     </Link>
                 </StyledNavItem>
                 <StyledNavItem mode={mode}>
-                    <Link smooth duration={1100} to='contact'>
+                    <Link smooth duration={2000} to='contact'>
                         <p>{english ? 'CONTACT ME' : 'CONTATO'}</p>
                     </Link>
                 </StyledNavItem>
@@ -63,6 +64,11 @@ const Header = ({ setTransition}) => {
                 </StyledToggle>
             </StyledNavbar>
             {mobileNav && <MobileNav />}
+            <Link smooth duration={500} to='about'>
+                <StyledAutoScroll>
+                    <SvgArrow size={20} reverse={true} colors={['#fff', '#fff', '#fff']} />
+                </StyledAutoScroll>
+            </Link>
         </StyledHeader>
     )
 }

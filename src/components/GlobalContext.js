@@ -15,7 +15,7 @@ export const GlobalProvider = ({children}) => {
         else setMode(() => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
         
         if(localLanguage === 'true') setEnglish(true)
-        else setEnglish(() => navigator.language === 'pt-BR' || navigator.language === 'pt-PT' ? false : true)
+        else setEnglish(() => (navigator.language === 'pt-BR' || navigator.language === 'pt-br') || (navigator.language === 'pt-PT' || navigator.language === 'pt-pt') ? false : true)
 
     }, [])
     return (

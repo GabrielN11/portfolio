@@ -41,12 +41,12 @@ const Main = () => {
     }, { threshold: [0.5, 0.1] })
 
     let contactObserver = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.4) {
+      if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.3) {
         setVisible(current => ({ ...current, contact: true }))
       } else if (entries[0].intersectionRatio <= 0.1) {
         setVisible(current => ({ ...current, contact: false }))
       }
-    }, { threshold: [0.4, 0.1] })
+    }, { threshold: [0.3, 0.1] })
 
     aboutObserver.observe(about)
     skillsObserver.observe(skills)

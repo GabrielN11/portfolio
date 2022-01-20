@@ -13,8 +13,8 @@ const StyledScroll = styled.div`
 const index = ({ mode }) => {
     return (
         <StyledScroll>
-            <Link smooth duration={500} to='header'>
-                <SvgArrow mode={mode} />
+            <Link smooth duration={1000} to='header'>
+                <SvgArrow mode={mode} colors={['#000', '#fff', 'orange']} />
             </Link>
         </StyledScroll>
     )

@@ -51,6 +51,15 @@ const animDescription = keyframes`
     }
 `
 
+const animScroll = keyframes`
+    from{
+        transform: translateY(2px) rotate(-90deg);
+    }
+    to{
+        transform: translateY(-2px) rotate(-90deg);
+    }
+`
+
 export const StyledHeader = styled.header`
     position: relative;
     padding: 20px;
@@ -183,7 +192,7 @@ export const StyledOption = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ${({mode}) => mode === 'light' ? '#1b1b1b' : '#fff'};
+    color: ${({ mode }) => mode === 'light' ? '#1b1b1b' : '#fff'};
     cursor: pointer;
     transition: background-color .3s;
     &:hover{
@@ -208,4 +217,28 @@ export const StyledStick = styled.span`
     height: 2px;
     width: 20px;
     background-color: #fff;
+`
+
+export const StyledAutoScroll = styled.div`
+    position: absolute;
+    bottom: 50px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & svg{
+        animation: ${animScroll} 1s infinite alternate;
+    }
+    @media(min-width: 600px){
+        display: none;
+    }
+    
 `
