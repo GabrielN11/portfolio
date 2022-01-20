@@ -13,17 +13,17 @@ const MobileNav = () => {
                     </Link>
                 </StyledMobileNavItem>
                 <StyledMobileNavItem>
-                    <Link smooth duration={500} to='skills'>
+                    <Link smooth duration={1000} to='skills'>
                         {english ? 'SKILLS' : 'HABILIDADES'}
                     </Link>
                 </StyledMobileNavItem>
                 <StyledMobileNavItem>
-                    <Link smooth duration={500} to='projects'>
+                    <Link smooth duration={1500} to='projects'>
                         {english ? 'PROJECTS' : 'PROJETOS'}
                     </Link>
                 </StyledMobileNavItem>
                 <StyledMobileNavItem>
-                    <Link smooth duration={500} to='contact'>
+                    <Link smooth duration={2000} to='contact'>
                         {english ? 'CONTACT ME' : 'CONTATO'}
                     </Link>
                 </StyledMobileNavItem>

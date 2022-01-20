@@ -86,6 +86,10 @@ export const StyledImages = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: ${({mode}) => {
+        if(mode !== 'light') return '#0e1011'
+        return '#f8f9fa'
+    }};
     & img{
         max-width: 100%;
         max-height: 500px;

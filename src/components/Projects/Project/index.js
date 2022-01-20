@@ -1,13 +1,13 @@
 import React from 'react'
 import SvgGithub from '../../../assets/SvgGithub'
 import SvgLink from '../../../assets/SvgLink'
-import { StyledIcons, StyledImages, StyledImageZoom, StyledInfo, StyledProject, StyledProjectText, StyledSpin } from '../styles'
+import { StyledIcons, StyledImages, StyledInfo, StyledProject, StyledProjectText, StyledSpin } from '../styles'
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Pagination, A11y, Autoplay, EffectFlip } from 'swiper'
+import { Pagination, A11y, Autoplay, EffectFade } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
-import 'swiper/css/effect-flip'
+import 'swiper/css/effect-fade'
 import styles from './Project.module.css'
 import { StyledTextTitle } from '../../About/styles'
 import { GlobalContext } from '../../GlobalContext'
@@ -29,11 +29,11 @@ const Project = ({ name, textPt, textEn, images, repo, site, setImage, visible }
                     </a>
                 </StyledIcons>
             </StyledInfo>
-            <Swiper className={styles.swiper} autoplay={{ delay: 5000, disableOnInteraction: false }} modules={[Pagination, Autoplay, A11y, EffectFlip]}
-            effect='flip'>
+            <Swiper className={styles.swiper} autoplay={{ delay: 5000, disableOnInteraction: true }} modules={[Pagination, Autoplay, A11y, EffectFade]}
+            effect='fade'>
                 {images.map((image, i) => (
                     <SwiperSlide key={image.description}>
-                        <StyledImages onClick={() => setImage(image.url)}>
+                        <StyledImages onClick={() => setImage(image.url)} mode={mode}>
                             {visible && <img className={loaded[i] ? undefined : 'none'} src={image.url} alt={image.description} draggable={false} onLoad={() => {
                                 setLoaded(current => {
                                     current[i] = true
