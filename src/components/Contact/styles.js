@@ -17,7 +17,7 @@ export const StyledContact = styled.section`
     padding: 15px 30px 30px 30px;
     overflow: hidden;
     & div{
-        ${({visible}) => !visible && 'display: none;'}
+        ${({visible, widthMd}) => !visible && !widthMd && 'display: none;'}
     }
     @media(max-width: 850px){
         flex-direction: column;

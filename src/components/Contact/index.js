@@ -15,47 +15,38 @@ const Contact = () => {
     const [visible, setVisible] = React.useState(false)
     const [message, setMessage] = React.useState('')
     const { alert, displayAlert } = useAlert()
-    const heightXs = useMediaQuery({ query: '(max-height: 450px)' })
-    const widthSm = useMediaQuery({ query: '(max-width: 400px)' })
     const widthMd = useMediaQuery({ query: '(max-width: 850px)' })
     const contactref = React.useRef(null)
     const observer = React.useRef(null)
 
     React.useEffect(() => {
-        let thresholdValue
-        if (widthSm || heightXs) {
-            thresholdValue = 0.2
-        } else if (widthMd) {
-            thresholdValue = 0.3
-        } else {
-            thresholdValue = 0.4
+        if (!widthMd) {
+            if (observer.current) observer.current.unobserve(contactref.current)
+            observer.current = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.4) {
+                    setVisible(true)
+                } else if (entries[0].intersectionRatio <= 0.1) {
+                    setVisible(false)
+                }
+            }, { threshold: [0.4, 0.01] })
+            observer.current.observe(contactref.current)
+        }else{
+            setVisible(true)
         }
-
-        if (observer.current) observer.current.unobserve(contactref.current)
-        observer.current = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting && entries[0].intersectionRatio >= thresholdValue) {
-                setVisible(true)
-            } else if (entries[0].intersectionRatio <= 0.1) {
-                setVisible(false)
-            }
-        }, { threshold: [thresholdValue + 0.1, thresholdValue, 0.01] })
-
-        observer.current.observe(contactref.current)
-        window.addEventListener('scroll', () => {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                setVisible(true)
-            }
-        })
-    }, [widthSm, heightXs, widthMd])
+    }, [widthMd])
 
     React.useEffect(() => {
-        if (visible) {
-            const interval = setInterval(() => {
-                setShow(current => current + 1)
-                if (show >= 5) {
-                    clearInterval(interval)
-                }
-            }, 1000)
+        if(!widthMd){
+            if (visible) {
+                const interval = setInterval(() => {
+                    setShow(current => current + 1)
+                    if (show >= 5) {
+                        clearInterval(interval)
+                    }
+                }, 1000)
+            }
+        }else{
+            setShow(5)
         }
     }, [visible])
 
@@ -111,7 +102,7 @@ const Contact = () => {
     }
 
     return (
-        <StyledContact mode={mode} id='contact' visible={visible} ref={contactref}>
+        <StyledContact mode={mode} id='contact' visible={visible} widthMd={widthMd} ref={contactref}>
             <StyledTitle>
                 <h2 className={styles.visibleOne}>{english ? 'Interested?' : 'Interessado?'}</h2>
                 <h1 className={show < 1 ? styles.opacity : styles.visibleOne}>{english ? 'Contact-me!' : 'Contate-me!'}</h1>
