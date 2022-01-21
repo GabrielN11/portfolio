@@ -102,7 +102,7 @@ const Contact = () => {
     }
 
     return (
-        <StyledContact mode={mode} id='contact' visible={visible} widthMd={widthMd} ref={contactref}>
+        <StyledContact mode={mode} id='contact' visible={visible} ref={contactref}>
             <StyledTitle>
                 <h2 className={styles.visibleOne}>{english ? 'Interested?' : 'Interessado?'}</h2>
                 <h1 className={show < 1 ? styles.opacity : styles.visibleOne}>{english ? 'Contact-me!' : 'Contate-me!'}</h1>

@@ -240,5 +240,14 @@ export const StyledAutoScroll = styled.div`
     @media(min-width: 600px){
         display: none;
     }
+    @media(max-height: 570px){
+        bottom: 125px;
+    }
+    @media(max-height: 480px){
+        bottom: 200px;
+    }
+    @media(max-height: 400px){
+        bottom: 275px;
+    }
     
 `
