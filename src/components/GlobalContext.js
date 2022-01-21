@@ -9,10 +9,18 @@ export const GlobalProvider = ({children}) => {
     React.useEffect(() => {
         const localMode = localStorage.getItem('themeMode')
         const localLanguage = localStorage.getItem('language')
-        document.querySelector('body').classList.add(localMode + 'Scroll')
-        document.querySelector('html').classList.add(localMode + 'Scroll')
-        if(localMode) setMode(localMode)
-        else setMode(() => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        let newMode = 'light'
+        if(localMode){
+            setMode(localMode)
+            newMode = localMode
+        }
+        else{
+            newMode =  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+            setMode(newMode)
+        }
+
+        document.querySelector('body').classList.add(newMode + 'Scroll')
+        document.querySelector('html').classList.add(newMode + 'Scroll')
         
         if(localLanguage === 'true') setEnglish(true)
         else setEnglish(() => (navigator.language === 'pt-BR' || navigator.language === 'pt-br') || (navigator.language === 'pt-PT' || navigator.language === 'pt-pt') ? false : true)
