@@ -38,7 +38,7 @@ const Contact = () => {
             } else if(entries[0].intersectionRatio <= 0.1){
               setVisible(false)
             }
-          }, { threshold: [thresholdValue, 0.01] })
+          }, { threshold: [thresholdValue + 0.1, thresholdValue, 0.01] })
 
           observer.current.observe(contactref.current)
       
