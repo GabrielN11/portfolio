@@ -5,10 +5,44 @@ import styles from './About.module.css'
 import SvgLinkedin from '../../assets/SvgLinkedin'
 import SvgGithub from '../../assets/SvgGithub'
 import SvgDio from '../../assets/SvgDio'
+import {useMediaQuery} from 'react-responsive'
 
-const About = ({ visible }) => {
+const About = () => {
     const [show, setShow] = React.useState(0)
+    const [visible, setVisible] = React.useState(false)
     const { mode, english } = React.useContext(GlobalContext)
+    const widthMd = useMediaQuery({query: '(max-width: 750px)'})
+    const heightXs = useMediaQuery({query: '(max-height: 450px)'}) 
+    const widthSm = useMediaQuery({query: '(max-width: 550px)'}) 
+    const widthXs = useMediaQuery({query: '(max-width: 350px)'})
+    const aboutref = React.useRef(null)
+    const observer = React.useRef(null)
+
+    React.useEffect(() => {
+        let thresholdValue
+        if(widthXs || heightXs){
+            thresholdValue = 0.25
+        }else if(widthSm){
+            thresholdValue = 0.35
+        }else if(widthMd){
+            thresholdValue = 0.4
+        }else{
+            thresholdValue = 0.5
+        }
+
+        if(observer.current) observer.current.unobserve(aboutref.current)
+        observer.current = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && entries[0].intersectionRatio >= thresholdValue) {
+              setVisible(true)
+            } else if(entries[0].intersectionRatio <= 0.1){
+              setVisible(false)
+            }
+          }, { threshold: [thresholdValue, 0.01] })
+
+          observer.current.observe(aboutref.current)
+      
+    }, [widthSm, widthXs, widthMd, heightXs])
+
     React.useEffect(() => {
         if (visible) {
             const interval = setInterval(() => {
@@ -20,7 +54,7 @@ const About = ({ visible }) => {
         }
     }, [visible])
     return (
-        <StyledAbout mode={mode} id='about' visible={visible}>
+        <StyledAbout mode={mode} id='about' visible={visible} ref={aboutref}>
             <StyledAboutTitle mode={mode}>
                 <StyledTextTitle className={styles.visible}>{english ? "Hello, i am" : 'Olá, eu sou'}</StyledTextTitle>
                 <StyledName className={show < 1 ? styles.opacity : styles.visible}>Gabriel Nunes</StyledName>

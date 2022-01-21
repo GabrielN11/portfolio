@@ -5,14 +5,44 @@ import styles from './Contact.module.css'
 import useAlert from '../../hooks/useAlert'
 import Alert from '../Alert/Alert'
 import SvgLinkedin from '../../assets/SvgLinkedin'
+import { useMediaQuery } from 'react-responsive'
 
-const Contact = ({ visible }) => {
+const Contact = () => {
     const { mode, english } = React.useContext(GlobalContext)
     const [show, setShow] = React.useState(0)
     const [name, setName] = React.useState('')
     const [email, setEmail] = React.useState('')
+    const [visible, setVisible] = React.useState(false)
     const [message, setMessage] = React.useState('')
     const { alert, displayAlert } = useAlert()
+    const heightXs = useMediaQuery({query: '(max-height: 450px)'}) 
+    const widthSm = useMediaQuery({query: '(max-width: 400px)'})
+    const widthMd = useMediaQuery({query: '(max-width: 850px)'})
+    const contactref = React.useRef(null)
+    const observer = React.useRef(null)
+
+    React.useEffect(() => {
+        let thresholdValue
+        if(widthSm || heightXs){
+            thresholdValue = 0.2
+        }else if(widthMd){
+            thresholdValue = 0.3
+        }else{
+            thresholdValue = 0.4
+        }
+
+        if(observer.current) observer.current.unobserve(contactref.current)
+        observer.current = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && entries[0].intersectionRatio >= thresholdValue) {
+              setVisible(true)
+            } else if(entries[0].intersectionRatio <= 0.1){
+              setVisible(false)
+            }
+          }, { threshold: [thresholdValue, 0.01] })
+
+          observer.current.observe(contactref.current)
+      
+    }, [widthSm, heightXs, widthMd])
 
     React.useEffect(() => {
         if (visible) {
@@ -77,7 +107,7 @@ const Contact = ({ visible }) => {
     }
 
     return (
-        <StyledContact mode={mode} id='contact' visible={visible}>
+        <StyledContact mode={mode} id='contact' visible={visible} ref={contactref}>
             <StyledTitle>
                 <h2 className={styles.visibleOne}>{english ? 'Interested?' : 'Interessado?'}</h2>
                 <h1 className={show < 1 ? styles.opacity : styles.visibleOne}>{english ? 'Contact-me!' : 'Contate-me!'}</h1>

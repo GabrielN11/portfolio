@@ -136,6 +136,7 @@ const projects = [
 const Projects = ({setImage, image}) => {
     const { mode } = React.useContext(GlobalContext)
     const swiperRef = React.useRef(null)
+    const projectsRef = React.useRef(null)
     const [visible, setVisible] = React.useState(false)
 
     React.useEffect(() => {
@@ -161,10 +162,10 @@ const Projects = ({setImage, image}) => {
             }else{
                 setVisible(false)
             }
-        }, {threshold: [0.1]})
+        }, {threshold: [0.01]})
         
-        imgObserver.observe(document.querySelector('#projects'))
-        observer.observe(document.querySelector('#projects'))
+        imgObserver.observe(projectsRef.current)
+        observer.observe(projectsRef.current)
     }, [])
 
     React.useEffect(() => {
@@ -181,7 +182,7 @@ const Projects = ({setImage, image}) => {
           
     }, [mode])
     return (
-        <StyledProjectSection mode={mode} id='projects'>
+        <StyledProjectSection mode={mode} id='projects' ref={projectsRef}>
             <Swiper pagination navigation className="mySwiper" modules={[Navigation, Pagination, Autoplay, A11y]}
                 allowTouchMove={false} autoplay={true} ref={swiperRef} loop={true}>
                 {projects.map(project => (
