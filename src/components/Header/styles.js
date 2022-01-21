@@ -9,6 +9,18 @@ const animScroll = keyframes`
     }
 `
 
+const fadeAnim = keyframes`
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+`
+
 export const StyledHeader = styled.header`
     position: relative;
     padding: 20px;
@@ -198,4 +210,15 @@ export const StyledAutoScroll = styled.div`
         bottom: 275px;
     }
     
+`
+
+export const StyledFadeInFadeOut = styled.div`
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0;
+    animation: ${fadeAnim} 1s forwards ease-in;
 `

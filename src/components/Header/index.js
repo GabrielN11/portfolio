@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledAutoScroll, StyledHeader, StyledName, StyledNavbar, StyledNavItem, StyledProfileAvatar, StyledStick, StyledTitle, StyledTitleDescription, StyledToggle } from './styles'
+import { StyledAutoScroll, StyledFadeInFadeOut, StyledHeader, StyledName, StyledNavbar, StyledNavItem, StyledProfileAvatar, StyledStick, StyledTitle, StyledTitleDescription, StyledToggle } from './styles'
 import { GlobalContext } from '../GlobalContext'
 import ModeChanger from './ModeChanger'
 import LanguageChanger from './LanguageChanger'
@@ -7,9 +7,10 @@ import MobileNav from './MobileNav'
 import { Link } from 'react-scroll'
 import SvgArrow from '../../assets/SvgArrow'
 
-const Header = ({ setTransition }) => {
+const Header = () => {
     const { mode, english } = React.useContext(GlobalContext)
     const [mobileNav, setMobileNav] = React.useState(false)
+    const [transition, setTransition] = React.useState(false)
 
     function animSticks(forwards) {
         const stickOne = document.querySelector('#stick1')
@@ -29,47 +30,50 @@ const Header = ({ setTransition }) => {
         }, 25)
     }
     return (
-        <StyledHeader mode={mode} id='header'>
-            <StyledNavbar className='font-acme'>
-                <StyledProfileAvatar />
-                <StyledNavItem mode={mode}>
-                    <Link smooth duration={500} to='about' offset={-70}>
-                        <p>{english ? 'ABOUT ME' : 'SOBRE'}</p>
-                    </Link>
-                </StyledNavItem>
-                <StyledNavItem mode={mode}>
-                    <Link smooth duration={1000} to='skills' offset={-70}>
-                        <p>{english ? 'SKILLS' : 'HABILIDADES'}</p>
-                    </Link>
-                </StyledNavItem>
-                <StyledNavItem mode={mode}>
-                    <Link smooth duration={1500} to='projects' offset={-70}>
-                        <p>{english ? 'PROJECTS' : 'PROJETOS'}</p>
-                    </Link>
-                </StyledNavItem>
-                <StyledNavItem mode={mode}>
-                    <Link smooth duration={2000} to='contact'>
-                        <p>{english ? 'CONTACT ME' : 'CONTATO'}</p>
-                    </Link>
-                </StyledNavItem>
-                <ModeChanger setTransition={setTransition} />
-                <LanguageChanger />
-                <StyledToggle onClick={() => {
-                    setMobileNav(current => !current)
-                    animSticks(!mobileNav)
-                }}>
-                    <StyledStick id='stick1' />
-                    <StyledStick className={mobileNav ? 'none' : undefined} />
-                    <StyledStick id='stick2' />
-                </StyledToggle>
-            </StyledNavbar>
-            {mobileNav && <MobileNav />}
-            <Link smooth duration={500} to='about'>
-                <StyledAutoScroll className={mobileNav ? 'none' : undefined}>
-                    <SvgArrow size={30} reverse={true} colors={['#fff', '#fff', '#fff']} />
-                </StyledAutoScroll>
-            </Link>
-        </StyledHeader>
+        <>
+            <StyledHeader mode={mode} id='header'>
+                <StyledNavbar className='font-acme'>
+                    <StyledProfileAvatar />
+                    <StyledNavItem mode={mode}>
+                        <Link smooth duration={500} to='about' offset={-70}>
+                            <p>{english ? 'ABOUT ME' : 'SOBRE'}</p>
+                        </Link>
+                    </StyledNavItem>
+                    <StyledNavItem mode={mode}>
+                        <Link smooth duration={1000} to='skills' offset={-70}>
+                            <p>{english ? 'SKILLS' : 'HABILIDADES'}</p>
+                        </Link>
+                    </StyledNavItem>
+                    <StyledNavItem mode={mode}>
+                        <Link smooth duration={1500} to='projects' offset={-70}>
+                            <p>{english ? 'PROJECTS' : 'PROJETOS'}</p>
+                        </Link>
+                    </StyledNavItem>
+                    <StyledNavItem mode={mode}>
+                        <Link smooth duration={2000} to='contact'>
+                            <p>{english ? 'CONTACT ME' : 'CONTATO'}</p>
+                        </Link>
+                    </StyledNavItem>
+                    <ModeChanger setTransition={setTransition} />
+                    <LanguageChanger />
+                    <StyledToggle onClick={() => {
+                        setMobileNav(current => !current)
+                        animSticks(!mobileNav)
+                    }}>
+                        <StyledStick id='stick1' />
+                        <StyledStick className={mobileNav ? 'none' : undefined} />
+                        <StyledStick id='stick2' />
+                    </StyledToggle>
+                </StyledNavbar>
+                {mobileNav && <MobileNav />}
+                <Link smooth duration={500} to='about'>
+                    <StyledAutoScroll className={mobileNav ? 'none' : undefined}>
+                        <SvgArrow size={30} reverse={true} colors={['#fff', '#fff', '#fff']} />
+                    </StyledAutoScroll>
+                </Link>
+            </StyledHeader>
+            {transition && <StyledFadeInFadeOut/>}
+        </>
     )
 }
 

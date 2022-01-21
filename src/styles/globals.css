@@ -89,26 +89,3 @@ a {
 .font-montserrat{
   font-family: Montserrat, 'Courier New', Courier, monospace;
 }
-
-.fadeInFadeOut{
-  position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
-    height: 100vh;
-    background-color: #000;
-    opacity: 0;
-    animation: fadeAnim 1s forwards ease-in;
-}
-
-@keyframes fadeAnim {
-  0%{
-    opacity: 1;
-  }
-  50%{
-    opacity: 0.5;
-  }
-  100%{
-    opacity: 0;
-  }
-}
