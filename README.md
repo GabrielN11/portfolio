@@ -18,7 +18,7 @@ The "react-responsive" hook "useMediaQuery" is used to change the IntersectionOb
 
 ## Projects
 
-Swiper was used in this section to showcases all my projects in a carousel. The swiper is by default in autoplay, however it will stop changind the slides if you're scrolling over the section, this is also detected through IntersectionObserver. Inside each project slide there is another Swiper slides with the images of each project, they are loaded when you scroll over the projects section.
+Swiper was used in this section to showcases all my projects in a carousel. The swiper is by default in autoplay, however it will stop changing the slides automatically if you're scrolling over the section, this is also detected through IntersectionObserver. Inside each project slide there is another Swiper slide with the images of each project, they are loaded when you scroll over the projects section.
 
 ## Contact
 
@@ -26,4 +26,4 @@ In this section i created a form so anyone can contact me, i used [FormSubmit](h
 
 ## Conclusion
 
-The website was hosted on vercel and are currently in this domain: https://gabrielnunes.vercel.app/. You can check it to see the page for yourself and know more about me and my work! 
+The website was hosted on Vercel and are currently in this domain: https://gabrielnunes.vercel.app/. You can check it to see the page for yourself and know more about me and my work! 
