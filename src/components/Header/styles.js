@@ -1,56 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-const fallingDown = keyframes`
-    0%{
-        transform: translateY(-200px);
-    }
-    35%{
-        transform: translateY(0);
-    }
-    55%{
-        transform: translateY(-65px);
-    }
-    75%{
-        transform: translateY(0);
-    }
-    85%{
-        transform: translateY(-25px);
-    }
-    100%{
-        transform: initial;
-    }
-`
-
-const animName = keyframes`
-    0%{
-        transform: translateX(-500px);
-    }
-    80%{
-        transform: initial;
-    }
-    90%{
-        transform: translateX(-20px);
-    }
-    100%{
-        transform: initial;
-    }
-`
-
-const animDescription = keyframes`
-    0%{
-        transform: translateX(500px);
-    }
-    80%{
-        transform: initial;
-    }
-    90%{
-        transform: translateX(20px);
-    }
-    100%{
-        transform: initial;
-    }
-`
-
 const animScroll = keyframes`
     from{
         transform: translateY(2px) rotate(-90deg);
@@ -82,7 +31,6 @@ export const StyledNavbar = styled.nav`
     display: flex;
     align-items: center;
     color: #fff;
-    animation: ${fallingDown} 1s forwards ease-out;
     z-index: 20;
     @media(max-width: 700px){
         margin: 0 10px;
