@@ -65,7 +65,7 @@ const Header = ({ setTransition }) => {
             </StyledNavbar>
             {mobileNav && <MobileNav />}
             <Link smooth duration={500} to='about'>
-                <StyledAutoScroll>
+                <StyledAutoScroll className={mobileNav ? 'none' : undefined}>
                     <SvgArrow size={30} reverse={true} colors={['#fff', '#fff', '#fff']} />
                 </StyledAutoScroll>
             </Link>
