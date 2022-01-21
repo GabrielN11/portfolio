@@ -14,7 +14,7 @@ You can check my information either in portuguese (my native language) or englis
 
 In order to keep the site visually pleasing, some sections contains animations when you scroll over them, this is checked through IntersectionObserver API. The "About" and "Contact" (only in desktop) sections contains specific animations when you first scroll over them, displaying the texts and informations in a intuitive way.
 
-The "react-responsive" hook "useMediaQuery" is used to change the IntersectionObserver trheshold in different screen resolutions so the UX is not compromised in mobile.
+The "react-responsive" hook "useMediaQuery" is used to change the IntersectionObserver thresholds in different screen resolutions so the UX is not compromised in mobile.
 
 ## Projects
 
