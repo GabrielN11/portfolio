@@ -15,33 +15,37 @@ const Contact = () => {
     const [visible, setVisible] = React.useState(false)
     const [message, setMessage] = React.useState('')
     const { alert, displayAlert } = useAlert()
-    const heightXs = useMediaQuery({query: '(max-height: 450px)'}) 
-    const widthSm = useMediaQuery({query: '(max-width: 400px)'})
-    const widthMd = useMediaQuery({query: '(max-width: 850px)'})
+    const heightXs = useMediaQuery({ query: '(max-height: 450px)' })
+    const widthSm = useMediaQuery({ query: '(max-width: 400px)' })
+    const widthMd = useMediaQuery({ query: '(max-width: 850px)' })
     const contactref = React.useRef(null)
     const observer = React.useRef(null)
 
     React.useEffect(() => {
         let thresholdValue
-        if(widthSm || heightXs){
+        if (widthSm || heightXs) {
             thresholdValue = 0.2
-        }else if(widthMd){
+        } else if (widthMd) {
             thresholdValue = 0.3
-        }else{
+        } else {
             thresholdValue = 0.4
         }
 
-        if(observer.current) observer.current.unobserve(contactref.current)
+        if (observer.current) observer.current.unobserve(contactref.current)
         observer.current = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting && entries[0].intersectionRatio >= thresholdValue) {
-              setVisible(true)
-            } else if(entries[0].intersectionRatio <= 0.1){
-              setVisible(false)
+                setVisible(true)
+            } else if (entries[0].intersectionRatio <= 0.1) {
+                setVisible(false)
             }
-          }, { threshold: [thresholdValue + 0.1, thresholdValue, 0.01] })
+        }, { threshold: [thresholdValue + 0.1, thresholdValue, 0.01] })
 
-          observer.current.observe(contactref.current)
-      
+        observer.current.observe(contactref.current)
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                setVisible(true)
+            }
+        })
     }, [widthSm, heightXs, widthMd])
 
     React.useEffect(() => {
@@ -99,7 +103,7 @@ const Contact = () => {
                 setName('')
                 setEmail('')
             } else {
-                displayAlert( english ? 'Oops! There was an error sending your message!' : 'Ops! Ocorreu um erro ao enviar sua mensagem!', null, 7000)
+                displayAlert(english ? 'Oops! There was an error sending your message!' : 'Ops! Ocorreu um erro ao enviar sua mensagem!', null, 7000)
             }
         } catch (e) {
             displayAlert(english ? 'Oops! There was an error sending your message! Try again later.' : 'Ops! Ocorreu um erro ao enviar sua mensagem! Tente mais tarde.', null, 7000)
