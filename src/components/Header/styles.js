@@ -56,12 +56,12 @@ export const StyledProfileAvatar = styled.div`
     height: 130px;
     width: 130px;
     margin-right: auto;
-    background-image: url(/profile.jpeg);
+    background-image: url(/profile.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
-    opacity: 0.8;
+    opacity: 0.9;
     cursor: pointer;
     transition: all .5s;
     &:hover{
