@@ -13,8 +13,8 @@ import 'swiper/css/autoplay'
 const projects = [
     {
         name: 'Campos - Arquitetura e Engenharia',
-        textPt: 'Este projeto foi meu primeiro freelance feito para uma empresa de engenharia arquitetura que precisava atualizar seu website. Foi inicialmente feito em ReactJS e posteriormente migrado para Next.JS para ser amigável aos SEOs e atingir mais clientes. Também foi desenvolvida uma API em NodeJS e um banco de dados mySQL para armazenar imagens que o proprietário queira publicar para os visitantes, além dos itens relacionados ao serviços que podem ser trocados dinamicamente pelo proprietário. Em breve estará no ar.',
-        textEn: "This was my first freelance project developed for an architecture and engineering firm that needed to update their website. It was initially developed with ReactJS and later migrated to Next.JS to be SEO friendly and reach more clients. I've also developed a NodeJS API and a MySQL database to store images that the owner wants to publish for visitors, in addition to service-related items that can be dynamically exchanged by the owner. It will be on air soon. ",
+        textPt: 'Este projeto foi meu primeiro freelance feito para uma empresa de engenharia arquitetura que precisava atualizar seu website. Foi inicialmente feito em ReactJS e posteriormente migrado para Next.JS para ser amigável aos SEOs e atingir mais clientes. Também foi desenvolvida uma API em NodeJS e um banco de dados mySQL para armazenar imagens que o proprietário queira publicar para os visitantes, além dos itens relacionados ao serviços que podem ser trocados dinamicamente pelo proprietário.',
+        textEn: "This was my first freelance project developed for an architecture and engineering firm that needed to update their website. It was initially developed with ReactJS and later migrated to Next.JS to be SEO friendly and reach more clients. I've also developed a NodeJS API and a MySQL database to store images that the owner wants to publish for visitors, in addition to service-related items that can be dynamically exchanged by the owner.",
         images: [
             {
                 url: '/arqeng1.png',
@@ -38,7 +38,7 @@ const projects = [
             },
         ],
         repo: false,
-        site: false,
+        site: 'https://camposarquitetura.eng.br/',
     },
     {
         name: 'E-Commerce',
