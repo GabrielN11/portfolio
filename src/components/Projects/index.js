@@ -132,6 +132,31 @@ const projects = [
         repo: 'https://github.com/GabrielN11/askanswer',
         site: false
     },
+    {
+        name: 'Algorithm Visualizer',
+        textPt: 'Este site demonstra de forma gráfica alguns dos principais algoritmos de ordenação de vetores na ciência da computação, sendo eles Bubble Sort, Selection Sort, Insertion Sort, Shell Sort e Merge Sort. O projeto foi desenvolvido em colaboração entre Omar Chaar (Link do GitHub abaixo) e eu. Eu desenvolvi maior parte do front end do projeto e sincronizei os elementos gráficos com os vetores e métodos de ordenação, que foram desenvolvidos por Omar. Também apliquei temporizadores e operações assincronas no código, para que a ordenação seja feita de forma lenta e pudesse ser acompanhada pelos usuários. Visite o site no link abaixo!',
+        textEn: 'This site graphically demonstrates some of the main vector sorting algorithms in computer science, being them Bubble Sort, Selection Sort, Insertion Sort, Shell Sort and Merge Sort. The project was developed in Collaboration between Omar Chaar (Link to the GitHub below) and myself. I developed most of the front end of the project and synchronized the graphical elements with the arrays and the sorting methods, which were developed by Omar. I also applied timers and asynchronous operations in the code, so the sorting is done slowly and can be tracked by the users. Visit the site at the link below!',
+        images: [
+            {
+                url: '/visualizer1.png',
+                description: 'Pagina inicial'
+            },
+            {
+                url: '/visualizer2.png',
+                description: 'Selection Sort'
+            },
+            {
+                url: '/visualizer3.png',
+                description: 'Insertion Sort'
+            },
+            {
+                url: '/visualizer4.png',
+                description: 'Mobile'
+            },
+        ],
+        repo: 'https://github.com/omar-chaar/algo-visu',
+        site: 'https://www.algorithm-visualizer.ml'
+    }
 ]
 
 const Projects = () => {
