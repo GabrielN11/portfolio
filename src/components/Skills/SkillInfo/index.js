@@ -37,6 +37,10 @@ const skills = [
         url: '/styled-components.png'
     },
     {
+        title: 'Bootstrap',
+        url: '/bootstrap.png'
+    },
+    {
         title: 'Linux/Ubuntu',
         url: '/ubuntu.png'
     },
