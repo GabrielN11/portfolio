@@ -29,6 +29,10 @@ const skills = [
         url: '/nextjs.png'
     },
     {
+        title: 'Angular',
+        url: '/angular.svg'
+    },
+    {
         title: 'jQuery',
         url: '/jquery.png'
     },
