@@ -1,6 +1,6 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-const zoomImage = (translate) =>  keyframes`
+const zoomImage = (translate) => keyframes`
     from{
         transform: scale(0.3) ${translate && 'translate(1000px)'};
     }
@@ -34,13 +34,13 @@ export const StyledProject = styled.div`
     width: 100%;
     height: 600px;
     padding: 60px;
-    color: ${({mode}) => {
-        if(mode === 'light') return '#1b1b1b'
-        if(mode === 'twilight') return '#ad94ca'
+    color: ${({ mode }) => {
+        if (mode === 'light') return '#1b1b1b'
+        if (mode === 'twilight') return '#ad94ca'
         return '#c7c7c7'
     }};
-    background-color: ${({mode}) => {
-        if(mode !== 'light') return '#0e1011'
+    background-color: ${({ mode }) => {
+        if (mode !== 'light') return '#0e1011'
         return '#f8f9fa'
     }};
     font-family: Montserrat;
@@ -86,8 +86,8 @@ export const StyledImages = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: ${({mode}) => {
-        if(mode !== 'light') return '#0e1011'
+    background-color: ${({ mode }) => {
+        if (mode !== 'light') return '#0e1011'
         return '#f8f9fa'
     }};
     & img{
@@ -101,9 +101,9 @@ export const StyledImages = styled.div`
 `
 
 export const StyledProjectText = styled.p`
-    color: ${({mode}) => {
-        if(mode === 'light') return '#555'
-        if(mode === 'twilight') return '#ad94ca'
+    color: ${({ mode }) => {
+        if (mode === 'light') return '#555'
+        if (mode === 'twilight') return '#ad94ca'
         return '#c7c7c7'
     }};
 `
@@ -112,20 +112,21 @@ export const StyledImageZoom = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    background-color: ${({mode}) => mode === 'light' ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.8)'};
+    background-color: ${({ mode }) => mode === 'light' ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.8)'};
     width: 100vw;
     height: 100vh;
     z-index: 30;
     display: flex;
     justify-content: center;
     align-items: center;
-    & img{
-        max-height: 90%;
-        max-width: 90%;
-        animation: ${zoomImage(true)} 0.5s forwards;
-        @media(max-width: 800px){
-            animation: ${zoomImage(false)} 0.5s forwards};
-        }
+`
+
+export const StyledImageZoomImage = styled.img`
+    max-height: 90%;
+    max-width: 90%;
+    animation: ${zoomImage(true)} 0.5s forwards;
+    @media(max-width: 800px){
+        animation: ${zoomImage(false)} 0.5s forwards};
     }
 `
 
@@ -140,7 +141,7 @@ export const StyledSpin = styled.div`
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 5px solid ${({mode}) => mode !== 'twilight' ? '#0071DC' : '#ad94ca'};
+    border: 5px solid ${({ mode }) => mode !== 'twilight' ? '#0071DC' : '#ad94ca'};
     border-right-color: transparent;
     animation: ${loading} 1s infinite;   
 `

@@ -1,6 +1,6 @@
 import React from 'react'
 import SvgX from '../../../assets/SvgX'
-import { StyledImageZoom, StyledClose } from '../styles'
+import { StyledImageZoom, StyledClose, StyledImageZoomImage } from '../styles'
 
 function useOutsideAlerter(ref, setSubMenu) {
     React.useEffect(() => {
@@ -31,7 +31,7 @@ const ImageZoom = ({image, setImage, mode}) => {
     }, [])
     return (
         <StyledImageZoom mode={mode}>
-            <img src={image} alt='Imagem aumentada' ref={imgref}/>
+            <StyledImageZoomImage src={image} alt='Imagem aumentada' ref={imgref}/>
             <StyledClose onClick={() => setImage(false)}>
                 <SvgX color={mode === 'light' ? '#000' : '#fff'} size={30}/>
             </StyledClose>

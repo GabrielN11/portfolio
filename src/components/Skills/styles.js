@@ -32,7 +32,7 @@ export const StyledSkills = styled.section`
     justify-content: center;
     flex-wrap: wrap;
     color: #fff;
-    height: 600px;
+    height: 700px;
     background-color: ${({mode}) => {
         if(mode === 'dark') return '#102239'
         if(mode === 'twilight') return '#271e3c'
@@ -40,7 +40,6 @@ export const StyledSkills = styled.section`
     }};
     font-family: Montserrat;
     padding: 15px 50px;
-    overflow: hidden;
     @media(max-width: 750px){
         padding: 5px 15px;
     }
@@ -138,6 +137,7 @@ export const StyledSkillTitle = styled.h1`
 `
 
 export const StyledSkillContainer = styled.div`
+    position: relative;
     width: 50%;
     height: 90%;
     display: flex;
@@ -169,6 +169,7 @@ export const StyledHardSkillContainer = styled.div`
     width: 70%;
     height: 100%;
     padding: 2rem;
+    overflow-y: scroll;
     @media(max-width: 850px){
         width: 100%;
         height: 75%;
@@ -197,8 +198,6 @@ export const StyledHardSkill = styled.div`
     }
     @media(max-width: 950px){
         width: 33%;
-    }
-    @media(max-width: 850px){
         & img{
             height: 50px;
         }
