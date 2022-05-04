@@ -169,6 +169,7 @@ export const StyledHardSkillContainer = styled.div`
     width: 70%;
     height: 100%;
     padding: 2rem;
+    background-color: #27384c;
     overflow-y: scroll;
     @media(max-width: 850px){
         width: 100%;

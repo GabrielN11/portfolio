@@ -50,7 +50,7 @@ const About = () => {
                 if (show >= 5) {
                     clearInterval(interval)
                 }
-            }, 1000)
+            }, 850)
         }
     }, [visible])
     return (

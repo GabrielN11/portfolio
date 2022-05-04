@@ -43,7 +43,7 @@ const Contact = () => {
                     if (show >= 5) {
                         clearInterval(interval)
                     }
-                }, 1000)
+                }, 950)
             }
         }else{
             setShow(5)
