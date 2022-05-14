@@ -21,6 +21,10 @@ const skills = [
         url: '/typescript.png'
     },
     {
+        title: 'Python',
+        url: '/python.png'
+    },
+    {
         title: 'React',
         url: '/react.png'
     },
