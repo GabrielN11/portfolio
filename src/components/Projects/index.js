@@ -156,7 +156,52 @@ const projects = [
         ],
         repo: 'https://github.com/omar-chaar/algo-visu',
         site: 'https://www.algorithm-visualizer.ml'
-    }
+    },
+    {
+        name: 'Caixa Eletrônico / ATM',
+        textPt: 'Um aplicativo web desenvolvido com intuíto de simular superficialmente o funcionamento de um caixa eletrônico. O administrador, que possui um painel próprio, pode criar usuários e suas respectivas contas no banco, além de também depositar as notas que estarão disponíveis no caixa eletrônico. O cliente pode depositar dinheiro na sua conta, sacar, transferir, conferir o saldo e histórico de transações. O caixa eletrônico possuí uma quantidade de cédulas disponíveis, essa quantidade é alterada de acordo com as transações do usuário e ações do adminsitrador. O aplicativo foi desenvolvido com a finalidade de praticar meus conhecimentos em Python e Angular. A API foi desenvolvida com Flask e o banco de dados com MySQL.',
+        textEn: 'A web application developed with the aim of superficially simulating the operation of an ATM. The administrator, who has his own panel, can create users and their respective bank accounts, in addition to depositing the notes that will be available at the ATM. The customer can deposit money into their account, withdraw, transfer, check balance and transaction history. The ATM has a number of banknotes available, this amount is changed according to user transactions and administrator actions. The application was developed in order to practice my knowledge in Python and Angular. The API was developed with Flask and the database with MySQL.',
+        images: [
+            {
+                url: '/atm1.png',
+                description: 'Página de login do usuário.'
+            },
+            {
+                url: '/atm2.png',
+                description: 'Painel de operações do cliente.'
+            },
+            {
+                url: '/atm3.png',
+                description: 'Histórico de transações.'
+            },
+            {
+                url: '/atm4.png',
+                description: 'Página de sacar.'
+            },
+            {
+                url: '/atm5.png',
+                description: 'Página mostrando as notas sacadas.'
+            },
+            {
+                url: '/atm6.png',
+                description: 'Página de depósito.'
+            },
+            {
+                url: '/atm7.png',
+                description: 'Painel de administrador.'
+            },
+            {
+                url: '/atm8.png',
+                description: 'Painel de gerenciamento de contas de usuário.'
+            },
+            {
+                url: '/atm9.png',
+                description: 'Página de login versão mobile.'
+            },
+        ],
+        repo: 'https://github.com/GabrielN11/caixa-eletronico',
+        site: false
+    },
 ]
 
 const Projects = () => {
