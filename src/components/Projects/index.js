@@ -202,6 +202,47 @@ const projects = [
         repo: 'https://github.com/GabrielN11/caixa-eletronico',
         site: false
     },
+    {
+        name: 'Quoting',
+        textPt: 'Quoting é uma aplicação mobile de mídia social criado com objetivo de compartilhar frases e citações. Os usuários podem ver frases de outras pessoas através de um feed que mostra publicações aleatórias de outros usuários. É possível comentar nas pulicações, as favoritar e seguir os outros usuários. A aplicação mobile foi desenvolvida com React Native e a API com Flask. Visite o README no repositório para ver mais sobre a aplicação.',
+        textEn: 'Quoting is a social media mobile application developed for the users to share quotes and thoughts. The users can see other people quotes through a feed that dynamically shows random posts from other users. It is possible to comment on publications, favorite them and follow other users. The mobile application was developed with React Native and the API with Flask. Check the README in the repository to learn more about the application.',
+        images: [
+            {
+                url: '/quoting1.png',
+                description: 'Tela de login.'
+            },
+            {
+                url: '/quoting2.png',
+                description: 'Feed de publicações.'
+            },
+            {
+                url: '/quoting3.png',
+                description: 'Sessão de comentários.'
+            },
+            {
+                url: '/quoting4.png',
+                description: 'Perfil de usuário.'
+            },
+            {
+                url: '/quoting5.png',
+                description: 'Lista de publicações de usuário.'
+            },
+            {
+                url: '/quoting6.png',
+                description: 'Tela de configurações.'
+            },
+            {
+                url: '/quoting7.png',
+                description: 'Menu lateral.'
+            },
+            {
+                url: '/quoting8.png',
+                description: 'Opções de publicações.'
+            },
+        ],
+        repo: 'https://github.com/GabrielN11/quoting-app',
+        site: false
+    },
 ]
 
 const Projects = () => {
