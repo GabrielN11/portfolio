@@ -11,8 +11,9 @@ import 'swiper/css/effect-fade'
 import styles from './Project.module.css'
 import { StyledTextTitle } from '../../About/styles'
 import { GlobalContext } from '../../GlobalContext'
+import SvgDownload from '../../../assets/SvgDownload'
 
-const Project = ({ name, textPt, textEn, images, repo, site, setImage, visible }) => {
+const Project = ({ name, textPt, textEn, images, repo, site, setImage, visible, icon }) => {
     const { english, mode } = React.useContext(GlobalContext)
     const [loaded, setLoaded] = React.useState(new Array(images.length)) // A função desse estado e sua lógica é para optimizar o loading inicial da aplicação, carregando imagens apenas quando a sessão se torna visível
     return (
@@ -24,13 +25,18 @@ const Project = ({ name, textPt, textEn, images, repo, site, setImage, visible }
                     <a title={repo ? (english ? 'Access the repository' : 'Visitar o repositório') : (english ? 'Repository unavailable' : 'Repositório indisponível')} href={repo || undefined} target='_blank' rel="noreferrer">
                         <SvgGithub color={mode === 'light' ? '#1b1b1b' : mode === 'dark' ? '#c7c7c7' : '#ad94ca'} size={35} available={repo} />
                     </a>
-                    <a title={site ? (english ? 'Access the project website' : 'Visitar site do projeto') : (english ? 'Site unavailable' : 'Site indisponível')} href={site || undefined} target='_blank' rel="noreferrer">
-                        <SvgLink size={35} color={mode === 'light' ? '#1b1b1b' : mode === 'dark' ? '#c7c7c7' : '#ad94ca'} available={site} />
-                    </a>
+                    {(icon && icon === 'download') ?
+                        <a title={site ? (english ? 'Download the application' : 'Baixe a aplicação') : (english ? 'Download unavailable' : 'Download indisponível')} href={site || undefined} target='_blank' rel="noreferrer" download>
+                            <SvgDownload size={35} color={mode === 'light' ? '#1b1b1b' : mode === 'dark' ? '#c7c7c7' : '#ad94ca'} available={site} />
+                        </a>
+                        :
+                        <a title={site ? (english ? 'Access the project website' : 'Visitar site do projeto') : (english ? 'Site unavailable' : 'Site indisponível')} href={site || undefined} target='_blank' rel="noreferrer">
+                            <SvgLink size={35} color={mode === 'light' ? '#1b1b1b' : mode === 'dark' ? '#c7c7c7' : '#ad94ca'} available={site} />
+                        </a>}
                 </StyledIcons>
             </StyledInfo>
             <Swiper className={styles.swiper} autoplay={{ delay: 5000, disableOnInteraction: true }} modules={[Pagination, Autoplay, A11y, EffectFade]}
-            effect='fade'>
+                effect='fade'>
                 {images.map((image, i) => (
                     <SwiperSlide key={image.description}>
                         <StyledImages onClick={() => setImage(image.url)} mode={mode}>
@@ -40,7 +46,7 @@ const Project = ({ name, textPt, textEn, images, repo, site, setImage, visible }
                                     return [...current]
                                 })
                             }} />}
-                            {!loaded[i] && <StyledSpin mode={mode}/>}
+                            {!loaded[i] && <StyledSpin mode={mode} />}
                         </StyledImages>
                     </SwiperSlide>
                 ))}
