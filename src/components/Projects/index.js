@@ -241,7 +241,7 @@ const projects = [
             },
         ],
         repo: 'https://github.com/GabrielN11/quoting-app',
-        site: '/quoting.apk',
+        site: 'https://github.com/GabrielN11/quoting-app/releases/tag/quotingv0.9-beta.1',
         icon: 'download'
     },
 ]

@@ -26,7 +26,7 @@ const Project = ({ name, textPt, textEn, images, repo, site, setImage, visible, 
                         <SvgGithub color={mode === 'light' ? '#1b1b1b' : mode === 'dark' ? '#c7c7c7' : '#ad94ca'} size={35} available={repo} />
                     </a>
                     {(icon && icon === 'download') ?
-                        <a title={site ? (english ? 'Download the application' : 'Baixe a aplicação') : (english ? 'Download unavailable' : 'Download indisponível')} href={site || undefined} target='_blank' rel="noreferrer" download>
+                        <a title={site ? (english ? 'Download the application' : 'Baixe a aplicação') : (english ? 'Download unavailable' : 'Download indisponível')} href={site || undefined} target='_blank' rel="noreferrer">
                             <SvgDownload size={35} color={mode === 'light' ? '#1b1b1b' : mode === 'dark' ? '#c7c7c7' : '#ad94ca'} available={site} />
                         </a>
                         :
