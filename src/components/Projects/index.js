@@ -109,7 +109,8 @@ const projects = [
             },
         ],
         repo: 'https://github.com/GabrielN11/ifoodinterfaceclone',
-        site: false
+        site: false,
+        icon: 'download'
     },
     {
         name: 'Ask&Answer',
@@ -241,7 +242,7 @@ const projects = [
             },
         ],
         repo: 'https://github.com/GabrielN11/quoting-app',
-        site: 'https://github.com/GabrielN11/quoting-app/releases/tag/quotingv0.9-beta.1',
+        site: 'https://github.com/GabrielN11/quoting-app/releases/tag/quotingv0.9-beta.2',
         icon: 'download'
     },
 ]
