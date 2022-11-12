@@ -130,7 +130,7 @@ const Contact = () => {
             <StyledSeparator className={show < 3 ? styles.opacity : styles.visibleOne}>
                 <h1>{english ? 'OR' : 'OU'}</h1>
             </StyledSeparator>
-            <StyledDiv className={show < 5 ? styles.opacity : styles.visibleThree}>
+            <StyledDiv className={show < 4 ? styles.opacity : styles.visibleThree}>
                 <StyledContactInfo>
                     <h3>{english ? 'Phone (WhatsApp and SMS)' : 'Número (WhatsApp ou SMS)'}</h3>
                     <p onClick={() => copyContact('+55 11 99180-4000')}>+55 11 99180-4000</p>
