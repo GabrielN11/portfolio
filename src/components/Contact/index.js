@@ -46,7 +46,7 @@ const Contact = () => {
                 }, 950)
             }
         }else{
-            setShow(5)
+            setShow(4)
         }
     }, [visible])
 
@@ -106,9 +106,8 @@ const Contact = () => {
             <StyledTitle>
                 <h2 className={styles.visibleOne}>{english ? 'Interested?' : 'Interessado?'}</h2>
                 <h1 className={show < 1 ? styles.opacity : styles.visibleOne}>{english ? 'Contact-me!' : 'Contate-me!'}</h1>
-                <p className={show < 2 ? styles.opacity : styles.visibleOne}>{english ? "i'm open to work!" : 'Estou disponível para trabalho!'}</p>
             </StyledTitle>
-            <StyledDiv className={show < 3 ? styles.opacity : styles.visibleTwo}>
+            <StyledDiv className={show < 2 ? styles.opacity : styles.visibleTwo}>
                 <StyledForm onSubmit={handleSubmit}>
                     <label>
                         <p>{english ? 'Name' : 'Nome'}:</p>
@@ -128,7 +127,7 @@ const Contact = () => {
                     <StyledButton mode={mode}>{english ? 'Send' : 'Enviar'}</StyledButton>
                 </StyledForm>
             </StyledDiv>
-            <StyledSeparator className={show < 4 ? styles.opacity : styles.visibleOne}>
+            <StyledSeparator className={show < 3 ? styles.opacity : styles.visibleOne}>
                 <h1>{english ? 'OR' : 'OU'}</h1>
             </StyledSeparator>
             <StyledDiv className={show < 5 ? styles.opacity : styles.visibleThree}>
