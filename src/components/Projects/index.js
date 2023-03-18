@@ -156,7 +156,7 @@ const projects = [
             },
         ],
         repo: 'https://github.com/omar-chaar/algo-visu',
-        site: 'https://www.algorithm-visualizer.ml'
+        site: 'https://omar-chaar.github.io/algo-visu/'
     },
     {
         name: 'Caixa Eletrônico / ATM',
