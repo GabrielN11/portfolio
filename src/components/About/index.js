@@ -58,7 +58,7 @@ const About = () => {
             <StyledAboutTitle mode={mode}>
                 <StyledTextTitle className={styles.visible}>{english ? "Hello, i am" : 'Olá, eu sou'}</StyledTextTitle>
                 <StyledName className={show < 1 ? styles.opacity : styles.visible}>Gabriel Nunes</StyledName>
-                <StyledText className={show < 2 ? styles.opacity : styles.visible}>{english ? 'Junior Front-end Developer' : 'Desenvolvedor Front-end Junior'}</StyledText>
+                <StyledText className={show < 2 ? styles.opacity : styles.visible}>{english ? 'Front-end Developer' : 'Desenvolvedor Front-end'}</StyledText>
             </StyledAboutTitle>
             <StyledAboutText>
                 <StyledTextTitle className={show < 3 ? styles.opacity : styles.visible}>{english ? 'A little about myself...' : 'Um pouco sobre mim...'}</StyledTextTitle>
